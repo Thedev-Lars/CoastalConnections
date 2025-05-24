@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coastal Connections Corp - East Coast Premium Brand Collective</title>
+    <title>Coastal Connections Corp - Premium Brand Partners for Independent Retailers</title>
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -15,35 +15,33 @@
     }
     </script>
     <link rel="icon" href="/images/favicon.png" type="image/png">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <style>
         :root {
             --primary: #1A5F7A;
-            --secondary: #57C5B6;
-            --accent: #FF9A3C;
-            --dark: #002B5B;
-            --light: #F9F9F9;
+            --secondary: #4A90A4;
+            --accent: #D2691E;
+            --dark: #1F2937;
+            --light: #FAFAFA;
             --white: #FFFFFF;
-            --gray: #EEF5FF;
-            --sand: #FFEBC1;
-            --success: #10B981;
-            --gradient-1: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            --gradient-2: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-            --gradient-3: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            --cream: #FFF8E7;
+            --warm-gray: #F7F7F5;
+            --success: #059669;
+            --border: #E5E7EB;
+            --shadow: rgba(0, 0, 0, 0.1);
         }
         
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Inter', 'Montserrat', sans-serif;
+            font-family: 'Inter', 'Helvetica Neue', sans-serif;
         }
         
         body {
             color: var(--dark);
             background: var(--light);
             line-height: 1.6;
-            overflow-x: hidden;
+            font-size: 16px;
         }
         
         .container {
@@ -52,15 +50,15 @@
             padding: 0 20px;
         }
 
-        /* Enhanced Header */
+        /* Header */
         header {
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
-            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 20px var(--shadow);
             position: sticky;
             top: 0;
-            z-index: 1000;
-            border-bottom: 1px solid rgba(87, 197, 182, 0.2);
+            z-index: 100;
+            border-bottom: 2px solid var(--accent);
         }
         
         nav {
@@ -72,33 +70,14 @@
         
         .logo {
             font-size: 28px;
-            font-weight: 800;
+            font-weight: 700;
             color: var(--primary);
             display: flex;
             align-items: center;
-            position: relative;
-        }
-        
-        .logo::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 60%;
-            height: 3px;
-            background: var(--gradient-3);
-            border-radius: 3px;
-            animation: logoGlow 3s ease-in-out infinite;
-        }
-        
-        @keyframes logoGlow {
-            0%, 100% { opacity: 0.7; transform: scaleX(1); }
-            50% { opacity: 1; transform: scaleX(1.1); }
         }
         
         .logo span {
             color: var(--secondary);
-            font-weight: 900;
         }
         
         .logo span.accent {
@@ -107,94 +86,71 @@
         
         .nav-links {
             display: flex;
-            gap: 35px;
+            gap: 32px;
         }
         
         .nav-links a {
             text-decoration: none;
             color: var(--dark);
-            font-weight: 600;
+            font-weight: 500;
             transition: all 0.3s ease;
             position: relative;
             padding: 8px 4px;
-            border-radius: 8px;
         }
         
-        .nav-links a::before {
+        .nav-links a::after {
             content: '';
             position: absolute;
             bottom: 0;
-            left: 50%;
+            left: 0;
             width: 0;
             height: 2px;
-            background: var(--gradient-3);
-            transition: all 0.3s ease;
-            transform: translateX(-50%);
-            border-radius: 2px;
+            background: var(--accent);
+            transition: width 0.3s ease;
         }
         
         .nav-links a:hover {
             color: var(--primary);
-            transform: translateY(-2px);
         }
         
-        .nav-links a:hover::before {
+        .nav-links a:hover::after {
             width: 100%;
         }
         
         .cta-button {
-            background: var(--gradient-3);
+            background: var(--primary);
             color: var(--white);
-            padding: 14px 28px;
-            border-radius: 50px;
-            font-weight: 700;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-weight: 600;
             text-decoration: none;
-            transition: all 0.4s ease;
-            position: relative;
-            overflow: hidden;
-            box-shadow: 0 8px 25px rgba(79, 172, 254, 0.4);
-        }
-        
-        .cta-button::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
-            transition: all 0.6s ease;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(26, 95, 122, 0.3);
         }
         
         .cta-button:hover {
-            transform: translateY(-3px) scale(1.05);
-            box-shadow: 0 15px 35px rgba(79, 172, 254, 0.6);
-        }
-        
-        .cta-button:hover::before {
-            left: 100%;
+            background: var(--secondary);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(26, 95, 122, 0.4);
         }
 
-        /* Enhanced Hero Section */
+        /* Hero Section */
         .hero {
-            padding: 100px 0 80px;
-            background: linear-gradient(135deg, var(--light) 0%, var(--gray) 50%, var(--sand) 100%);
+            padding: 80px 0 60px;
+            background: linear-gradient(135deg, var(--cream) 0%, var(--warm-gray) 100%);
             position: relative;
             overflow: hidden;
-            min-height: 80vh;
-            display: flex;
-            align-items: center;
         }
         
         .hero::before {
             content: '';
             position: absolute;
             top: 0;
-            left: 0;
             right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(26,95,122,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
-            opacity: 0.3;
+            width: 40%;
+            height: 100%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="dots" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="1.5" fill="rgba(26,95,122,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23dots)"/></svg>');
+            opacity: 0.6;
         }
         
         .hero-content {
@@ -207,465 +163,402 @@
         
         .hero-text {
             flex: 1;
-            animation: slideInFromLeft 1s ease-out;
         }
         
         .hero h1 {
-            font-size: 52px;
-            font-weight: 900;
-            margin-bottom: 30px;
-            background: var(--gradient-3);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            font-size: 48px;
+            font-weight: 800;
+            margin-bottom: 24px;
+            color: var(--primary);
             line-height: 1.2;
         }
         
         .hero p {
             font-size: 20px;
-            margin-bottom: 40px;
+            margin-bottom: 32px;
             color: var(--dark);
+            line-height: 1.6;
             opacity: 0.9;
-            line-height: 1.7;
         }
         
         .hero-buttons {
             display: flex;
-            gap: 25px;
+            gap: 20px;
             flex-wrap: wrap;
         }
         
         .btn-primary {
-            background: var(--gradient-3);
+            background: var(--primary);
             color: var(--white);
             padding: 16px 32px;
-            border-radius: 50px;
-            font-weight: 700;
+            border-radius: 10px;
+            font-weight: 600;
             text-decoration: none;
-            transition: all 0.4s ease;
-            box-shadow: 0 8px 25px rgba(79, 172, 254, 0.4);
-            position: relative;
-            overflow: hidden;
+            transition: all 0.3s ease;
+            box-shadow: 0 6px 20px rgba(26, 95, 122, 0.3);
+        }
+        
+        .btn-primary:hover {
+            background: var(--secondary);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(26, 95, 122, 0.4);
         }
         
         .btn-secondary {
-            background: rgba(255, 255, 255, 0.9);
+            background: var(--white);
             color: var(--primary);
             padding: 16px 32px;
-            border-radius: 50px;
-            font-weight: 700;
+            border-radius: 10px;
+            font-weight: 600;
             text-decoration: none;
-            transition: all 0.4s ease;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-            backdrop-filter: blur(10px);
-            border: 2px solid rgba(87, 197, 182, 0.3);
+            transition: all 0.3s ease;
+            border: 2px solid var(--primary);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         }
         
-        .btn-primary:hover, .btn-secondary:hover {
-            transform: translateY(-4px) scale(1.05);
+        .btn-secondary:hover {
+            background: var(--primary);
+            color: var(--white);
+            transform: translateY(-2px);
         }
         
         .hero-image {
             flex: 1;
-            position: relative;
-            animation: slideInFromRight 1s ease-out 0.3s backwards;
         }
         
         .hero-image img {
             width: 100%;
-            border-radius: 24px;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.2);
-            transition: transform 0.6s ease;
+            border-radius: 16px;
+            box-shadow: 0 12px 40px var(--shadow);
+            transition: transform 0.4s ease;
         }
         
         .hero-image:hover img {
-            transform: scale(1.05) rotate(2deg);
+            transform: scale(1.02);
         }
 
-        /* Enhanced Brand Showcase */
-        .brands {
-            padding: 100px 0;
+        /* Welcome Box */
+        .welcome-box {
             background: var(--white);
-            position: relative;
+            padding: 32px;
+            border-radius: 12px;
+            margin: 50px 0;
+            box-shadow: 0 8px 30px var(--shadow);
+            text-align: center;
+            border-left: 4px solid var(--accent);
+        }
+        
+        .welcome-box h3 {
+            font-size: 24px;
+            color: var(--primary);
+            margin-bottom: 16px;
+            font-weight: 700;
+        }
+        
+        .welcome-box p {
+            font-size: 18px;
+            line-height: 1.6;
+            color: var(--dark);
+            opacity: 0.9;
+        }
+
+        /* Section Styling */
+        section {
+            padding: 80px 0;
         }
         
         .section-title {
             text-align: center;
-            margin-bottom: 80px;
+            margin-bottom: 60px;
         }
         
         .section-title h2 {
-            font-size: 48px;
-            font-weight: 900;
-            margin-bottom: 25px;
-            background: var(--gradient-1);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            font-size: 40px;
+            font-weight: 800;
+            margin-bottom: 20px;
+            color: var(--primary);
         }
         
         .section-title p {
             font-size: 20px;
             color: var(--dark);
-            opacity: 0.8;
-            max-width: 600px;
+            max-width: 700px;
             margin: 0 auto;
+            line-height: 1.6;
+            opacity: 0.8;
+        }
+
+        /* Brand Showcase */
+        .brands {
+            background: var(--white);
         }
         
         .brand-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 40px;
-            margin-top: 60px;
+            gap: 32px;
         }
         
         .brand-card {
             background: var(--white);
-            padding: 40px 30px;
-            border-radius: 24px;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.08);
-            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            padding: 32px 28px;
+            border-radius: 16px;
+            box-shadow: 0 8px 30px var(--shadow);
+            transition: all 0.3s ease;
+            border-top: 4px solid var(--secondary);
             position: relative;
             overflow: hidden;
-            border: 1px solid rgba(87, 197, 182, 0.1);
         }
         
         .brand-card::before {
             content: '';
             position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 6px;
-            background: var(--gradient-3);
-            border-radius: 24px 24px 0 0;
-        }
-        
-        .brand-card:nth-child(2)::before {
-            background: var(--gradient-1);
-        }
-        
-        .brand-card:nth-child(3)::before {
-            background: var(--gradient-2);
-        }
-        
-        .brand-card:nth-child(4)::before {
-            background: var(--gradient-3);
-        }
-        
-        .brand-card:nth-child(5)::before {
-            background: var(--gradient-1);
-        }
-        
-        .brand-card:nth-child(6)::before {
-            background: var(--gradient-2);
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--secondary), var(--accent));
+            border-radius: 16px 16px 0 0;
         }
         
         .brand-card:hover {
-            transform: translateY(-15px) scale(1.02);
-            box-shadow: 0 30px 80px rgba(0,0,0,0.15);
+            transform: translateY(-8px);
+            box-shadow: 0 16px 50px rgba(0, 0, 0, 0.15);
         }
         
         .brand-header {
             display: flex;
             align-items: center;
-            margin-bottom: 25px;
+            margin-bottom: 24px;
         }
         
         .brand-logo {
             width: 80px;
             height: 80px;
-            background: var(--gray);
-            border-radius: 20px;
+            background: var(--warm-gray);
+            border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
             margin-right: 20px;
-            position: relative;
-            overflow: hidden;
+            border: 1px solid var(--border);
+            transition: all 0.3s ease;
         }
         
-        .brand-logo::after {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.3), transparent);
-            transform: rotate(45deg);
-            transition: all 0.6s ease;
-            opacity: 0;
-        }
-        
-        .brand-card:hover .brand-logo::after {
-            opacity: 1;
-            animation: shimmer 1.5s ease-in-out;
-        }
-        
-        @keyframes shimmer {
-            0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
-            100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+        .brand-card:hover .brand-logo {
+            transform: scale(1.05);
+            box-shadow: 0 4px 12px var(--shadow);
         }
         
         .brand-logo img {
-            max-width: 60%;
-            max-height: 60%;
+            max-width: 60px;
+            max-height: 60px;
             object-fit: contain;
         }
         
         .brand-info h3 {
             font-size: 24px;
-            font-weight: 800;
+            font-weight: 700;
             color: var(--primary);
-            margin-bottom: 8px;
+            margin-bottom: 6px;
         }
         
         .brand-category {
             font-size: 14px;
             color: var(--secondary);
-            font-weight: 600;
+            font-weight: 500;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 0.5px;
         }
         
         .brand-description {
-            margin-bottom: 25px;
+            margin-bottom: 24px;
             color: var(--dark);
-            opacity: 0.8;
             line-height: 1.6;
+            font-size: 16px;
         }
         
         .brand-details {
             display: grid;
-            gap: 20px;
+            gap: 16px;
         }
         
         .brand-territory {
-            background: linear-gradient(135deg, var(--gray), rgba(87, 197, 182, 0.1));
+            background: var(--warm-gray);
             padding: 16px;
-            border-radius: 12px;
-            border-left: 4px solid var(--secondary);
+            border-radius: 10px;
+            border-left: 3px solid var(--secondary);
         }
         
         .brand-territory h4 {
-            font-size: 14px;
-            font-weight: 700;
+            font-size: 12px;
+            font-weight: 600;
             color: var(--primary);
             margin-bottom: 8px;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 0.5px;
         }
         
         .territory-tags {
             display: flex;
             flex-wrap: wrap;
-            gap: 8px;
+            gap: 6px;
         }
         
         .territory-tag {
             background: var(--white);
             color: var(--primary);
-            padding: 4px 12px;
-            border-radius: 20px;
+            padding: 4px 10px;
+            border-radius: 16px;
             font-size: 12px;
             font-weight: 600;
-            border: 1px solid var(--secondary);
+            border: 1px solid var(--border);
         }
         
         .target-retailers h4 {
-            font-size: 14px;
-            font-weight: 700;
+            font-size: 12px;
+            font-weight: 600;
             color: var(--primary);
             margin-bottom: 8px;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 0.5px;
         }
         
         .retailer-types {
             display: flex;
             flex-wrap: wrap;
-            gap: 8px;
+            gap: 6px;
         }
         
         .retailer-type {
-            background: rgba(255, 154, 60, 0.1);
+            background: rgba(210, 105, 30, 0.1);
             color: var(--accent);
-            padding: 6px 12px;
-            border-radius: 20px;
+            padding: 4px 10px;
+            border-radius: 16px;
             font-size: 12px;
-            font-weight: 600;
-            border: 1px solid rgba(255, 154, 60, 0.3);
+            font-weight: 500;
+            border: 1px solid rgba(210, 105, 30, 0.2);
         }
 
-        /* Enhanced Animations */
-        @keyframes slideInFromLeft {
-            from {
-                opacity: 0;
-                transform: translateX(-50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-        
-        @keyframes slideInFromRight {
-            from {
-                opacity: 0;
-                transform: translateX(50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-        
-        .fade-in-up {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.8s ease-out;
-        }
-        
-        .fade-in-up.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* Business Model Section */
+        /* Business Model */
         .business-model {
-            padding: 100px 0;
-            background: linear-gradient(135deg, var(--gray) 0%, var(--light) 100%);
-            position: relative;
+            background: var(--warm-gray);
         }
         
         .model-cards {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
-            margin-top: 60px;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 32px;
         }
         
         .model-card {
             background: var(--white);
-            padding: 40px 30px;
-            border-radius: 20px;
-            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
-            transition: all 0.4s ease;
+            padding: 36px 28px;
+            border-radius: 16px;
+            box-shadow: 0 8px 30px var(--shadow);
             text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .model-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: var(--gradient-3);
+            transition: all 0.3s ease;
         }
         
         .model-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 25px 60px rgba(0,0,0,0.15);
+            transform: translateY(-6px);
+            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.15);
         }
         
         .model-icon {
             width: 80px;
             height: 80px;
-            background: var(--gradient-3);
-            border-radius: 20px;
+            background: var(--secondary);
+            border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0 auto 25px;
+            margin: 0 auto 24px;
             color: var(--white);
-            transition: all 0.4s ease;
+            transition: all 0.3s ease;
         }
         
         .model-card:hover .model-icon {
-            transform: scale(1.1) rotate(5deg);
+            background: var(--primary);
+            transform: scale(1.1);
         }
         
         .model-title {
             font-size: 22px;
             font-weight: 700;
-            margin-bottom: 15px;
+            margin-bottom: 16px;
             color: var(--primary);
         }
         
         .model-description {
             color: var(--dark);
-            opacity: 0.8;
             line-height: 1.6;
+            font-size: 16px;
+            opacity: 0.9;
         }
 
-        /* Services Section */
+        /* Services */
         .services {
-            padding: 100px 0;
             background: var(--white);
         }
         
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            margin-top: 60px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 28px;
         }
         
         .service-card {
             background: var(--white);
-            padding: 35px 25px;
+            padding: 32px 24px;
             border-radius: 16px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-            transition: all 0.4s ease;
+            box-shadow: 0 6px 25px var(--shadow);
             text-align: center;
-            border: 1px solid rgba(87, 197, 182, 0.1);
+            transition: all 0.3s ease;
+            border: 1px solid var(--border);
         }
         
         .service-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 50px rgba(0,0,0,0.12);
+            transform: translateY(-6px);
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
             border-color: var(--secondary);
         }
         
         .service-icon {
             width: 70px;
             height: 70px;
-            background: var(--gradient-1);
+            background: var(--accent);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             margin: 0 auto 20px;
             color: var(--white);
-            transition: all 0.4s ease;
+            transition: all 0.3s ease;
         }
         
         .service-card:hover .service-icon {
+            background: var(--primary);
             transform: scale(1.1);
-            background: var(--gradient-2);
         }
         
         .service-title {
             font-size: 20px;
             font-weight: 700;
-            margin-bottom: 15px;
+            margin-bottom: 16px;
             color: var(--primary);
         }
         
         .service-description {
             color: var(--dark);
-            opacity: 0.8;
             line-height: 1.6;
+            font-size: 15px;
+            opacity: 0.9;
         }
 
-        /* About Section */
+        /* About */
         .about {
-            padding: 100px 0;
-            background: linear-gradient(135deg, var(--light) 0%, var(--gray) 100%);
+            background: var(--cream);
         }
         
         .about-content {
@@ -681,73 +574,77 @@
         
         .about-image img {
             width: 100%;
-            border-radius: 20px;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+            border-radius: 16px;
+            box-shadow: 0 12px 40px var(--shadow);
+            transition: transform 0.4s ease;
+        }
+        
+        .about-image:hover img {
+            transform: scale(1.02);
         }
         
         .about-text h3 {
             font-size: 36px;
             font-weight: 800;
-            margin-bottom: 25px;
+            margin-bottom: 24px;
             color: var(--primary);
         }
         
         .about-text p {
             margin-bottom: 20px;
             color: var(--dark);
-            opacity: 0.8;
             line-height: 1.7;
+            font-size: 16px;
+            opacity: 0.9;
         }
         
         .about-highlight {
             background: var(--white);
-            padding: 30px;
-            border-radius: 16px;
-            margin-top: 30px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            border-left: 5px solid var(--accent);
+            padding: 28px;
+            border-radius: 12px;
+            margin-top: 32px;
+            box-shadow: 0 6px 20px var(--shadow);
+            border-left: 4px solid var(--accent);
         }
         
         .about-highlight h4 {
             color: var(--primary);
             font-size: 20px;
-            margin-bottom: 15px;
+            margin-bottom: 12px;
+            font-weight: 700;
         }
 
         /* Testimonials */
         .testimonials {
-            padding: 100px 0;
             background: var(--white);
         }
         
         .testimonials-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 40px;
-            margin-top: 60px;
+            gap: 32px;
         }
         
         .testimonial-card {
-            background: var(--white);
-            padding: 40px 30px;
-            border-radius: 20px;
-            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
-            transition: all 0.4s ease;
-            position: relative;
-            border-top: 4px solid var(--secondary);
+            background: var(--warm-gray);
+            padding: 32px 28px;
+            border-radius: 16px;
+            box-shadow: 0 6px 25px var(--shadow);
+            transition: all 0.3s ease;
+            border-top: 3px solid var(--secondary);
         }
         
         .testimonial-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 25px 60px rgba(0,0,0,0.15);
+            transform: translateY(-4px);
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
         }
         
         .testimonial-text {
             font-style: italic;
-            margin-bottom: 25px;
+            margin-bottom: 24px;
             line-height: 1.7;
             color: var(--dark);
-            opacity: 0.9;
+            font-size: 16px;
         }
         
         .testimonial-author {
@@ -760,8 +657,9 @@
             height: 60px;
             border-radius: 50%;
             overflow: hidden;
-            margin-right: 15px;
+            margin-right: 16px;
             border: 3px solid var(--secondary);
+            box-shadow: 0 4px 12px var(--shadow);
         }
         
         .author-image img {
@@ -773,89 +671,86 @@
         .author-info h4 {
             font-size: 18px;
             color: var(--primary);
-            margin-bottom: 5px;
+            margin-bottom: 4px;
+            font-weight: 600;
         }
         
         .author-info p {
             font-size: 14px;
             color: var(--dark);
-            opacity: 0.7;
+            opacity: 0.8;
         }
 
-        /* Contact Section */
+        /* Contact */
         .contact {
-            padding: 100px 0;
-            background: linear-gradient(135deg, var(--dark) 0%, var(--primary) 100%);
+            background: var(--primary);
             color: var(--white);
         }
         
-        .contact .section-title h2 {
-            color: var(--white);
-            background: none;
-            -webkit-text-fill-color: var(--white);
-        }
-        
+        .contact .section-title h2,
         .contact .section-title p {
             color: var(--white);
-            opacity: 0.9;
         }
         
         .contact-container {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 60px;
-            margin-top: 60px;
         }
         
         .contact-info h3 {
             font-size: 28px;
-            margin-bottom: 30px;
-            color: var(--secondary);
+            margin-bottom: 32px;
+            color: var(--white);
+            font-weight: 700;
         }
         
         .contact-item {
             display: flex;
             align-items: flex-start;
-            margin-bottom: 25px;
+            margin-bottom: 28px;
         }
         
         .contact-icon {
-            width: 50px;
-            height: 50px;
-            background: rgba(255, 255, 255, 0.1);
+            width: 60px;
+            height: 60px;
+            background: rgba(255, 255, 255, 0.15);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-right: 15px;
-            color: var(--secondary);
+            margin-right: 16px;
+            color: var(--white);
             backdrop-filter: blur(10px);
         }
         
         .contact-text h4 {
             font-size: 18px;
-            margin-bottom: 5px;
-            color: var(--secondary);
+            margin-bottom: 8px;
+            color: var(--white);
+            font-weight: 600;
         }
         
         .contact-text p {
             line-height: 1.6;
+            font-size: 16px;
             opacity: 0.9;
         }
         
         .contact-form {
             background: rgba(255, 255, 255, 0.1);
-            padding: 40px;
-            border-radius: 20px;
+            padding: 36px;
+            border-radius: 16px;
             backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.2);
         }
         
         .contact-form h3 {
             font-size: 28px;
-            margin-bottom: 30px;
+            margin-bottom: 28px;
             text-align: center;
-            color: var(--secondary);
+            color: var(--white);
+            font-weight: 700;
         }
         
         .form-group {
@@ -865,8 +760,9 @@
         .form-group label {
             display: block;
             margin-bottom: 8px;
-            font-weight: 600;
+            font-weight: 500;
             color: var(--white);
+            font-size: 15px;
         }
         
         .form-group input,
@@ -875,44 +771,41 @@
             width: 100%;
             padding: 14px 16px;
             border: 1px solid rgba(255, 255, 255, 0.3);
-            border-radius: 12px;
-            font-size: 16px;
-            background: rgba(255, 255, 255, 0.1);
-            color: var(--white);
+            border-radius: 10px;
+            font-size: 15px;
+            background: rgba(255, 255, 255, 0.9);
+            color: var(--dark);
             transition: all 0.3s ease;
-            backdrop-filter: blur(10px);
-        }
-        
-        .form-group input::placeholder,
-        .form-group textarea::placeholder {
-            color: rgba(255, 255, 255, 0.7);
         }
         
         .form-group input:focus,
         .form-group textarea:focus,
         .form-group select:focus {
-            border-color: var(--secondary);
+            border-color: var(--accent);
             outline: none;
-            box-shadow: 0 0 0 3px rgba(87, 197, 182, 0.3);
+            background: var(--white);
+            box-shadow: 0 0 0 3px rgba(210, 105, 30, 0.2);
         }
         
         .form-submit {
-            background: var(--gradient-3);
+            background: var(--accent);
             color: var(--white);
             padding: 16px 32px;
             border: none;
-            border-radius: 50px;
+            border-radius: 10px;
             font-size: 16px;
-            font-weight: 700;
+            font-weight: 600;
             cursor: pointer;
-            transition: all 0.4s ease;
+            transition: all 0.3s ease;
             width: 100%;
-            box-shadow: 0 8px 25px rgba(79, 172, 254, 0.4);
+            box-shadow: 0 6px 20px rgba(210, 105, 30, 0.3);
         }
         
         .form-submit:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 35px rgba(79, 172, 254, 0.6);
+            background: var(--white);
+            color: var(--accent);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(210, 105, 30, 0.4);
         }
 
         /* Footer */
@@ -931,82 +824,68 @@
         .footer-column h4 {
             margin-bottom: 20px;
             font-size: 20px;
-            color: var(--secondary);
+            color: var(--white);
+            font-weight: 600;
         }
         
         .footer-column a {
             display: block;
-            color: var(--white);
+            color: rgba(255, 255, 255, 0.8);
             text-decoration: none;
-            margin-bottom: 10px;
-            opacity: 0.8;
+            margin-bottom: 12px;
             transition: all 0.3s ease;
+            font-size: 15px;
         }
         
         .footer-column a:hover {
             color: var(--accent);
-            opacity: 1;
-            transform: translateX(5px);
+            transform: translateX(4px);
+        }
+        
+        .footer-column p {
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 12px;
+            font-size: 15px;
         }
         
         .copyright {
             text-align: center;
             margin-top: 40px;
-            padding-top: 25px;
+            padding-top: 24px;
             border-top: 1px solid rgba(255, 255, 255, 0.2);
-            opacity: 0.7;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 14px;
         }
 
         /* CTA Banner */
         .cta-banner {
-            background: var(--gradient-1);
-            padding: 80px 0;
+            background: linear-gradient(135deg, var(--secondary) 0%, var(--primary) 100%);
+            padding: 70px 0;
             text-align: center;
             color: var(--white);
             position: relative;
-            overflow: hidden;
-        }
-        
-        .cta-banner::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="2" fill="rgba(255,255,255,0.1)"/></svg>') repeat;
-            animation: float 20s linear infinite;
-        }
-        
-        @keyframes float {
-            0% { transform: translateY(0) rotate(0deg); }
-            100% { transform: translateY(-100px) rotate(360deg); }
-        }
-        
-        .banner-content {
-            position: relative;
-            z-index: 2;
         }
         
         .banner-content h2 {
-            font-size: 42px;
-            font-weight: 900;
+            font-size: 38px;
+            font-weight: 800;
             margin-bottom: 20px;
         }
         
         .banner-content p {
             font-size: 20px;
-            margin-bottom: 40px;
-            opacity: 0.9;
-            max-width: 600px;
+            margin-bottom: 36px;
+            max-width: 650px;
             margin-left: auto;
             margin-right: auto;
+            line-height: 1.6;
+            opacity: 0.95;
         }
         
         .banner-buttons {
             display: flex;
             justify-content: center;
-            gap: 25px;
+            gap: 24px;
             flex-wrap: wrap;
         }
 
@@ -1019,6 +898,7 @@
             .hero-content {
                 flex-direction: column;
                 text-align: center;
+                gap: 40px;
             }
             
             .section-title h2 {
@@ -1035,6 +915,7 @@
             
             .about-content {
                 grid-template-columns: 1fr;
+                gap: 40px;
             }
             
             .nav-links {
@@ -1042,7 +923,19 @@
             }
             
             .container {
-                padding: 0 15px;
+                padding: 0 16px;
+            }
+            
+            .hero-buttons {
+                justify-content: center;
+            }
+            
+            .banner-content h2 {
+                font-size: 28px;
+            }
+            
+            .banner-content p {
+                font-size: 18px;
             }
         }
 
@@ -1063,13 +956,13 @@
         }
 
         /* Scroll Animations */
-        .scroll-reveal {
+        .fade-in {
             opacity: 0;
-            transform: translateY(50px);
+            transform: translateY(30px);
             transition: all 0.8s ease-out;
         }
         
-        .scroll-reveal.active {
+        .fade-in.active {
             opacity: 1;
             transform: translateY(0);
         }
@@ -1091,11 +984,11 @@
                     <span>Coastal<span class="accent">Connections</span></span>
                 </div>
                 <div class="nav-links">
-                    <a href="#brands">Premium Brands</a>
-                    <a href="#business-model">Our Model</a>
+                    <a href="#brands">Our Brands</a>
+                    <a href="#how-we-work">Partnership</a>
                     <a href="#services">Services</a>
-                    <a href="#about">About</a>
-                    <a href="#contact">Partner With Us</a>
+                    <a href="#about">About Dean</a>
+                    <a href="#contact">Contact</a>
                 </div>
                 <a href="#contact" class="cta-button">Get Started</a>
             </nav>
@@ -1106,29 +999,34 @@
         <div class="container">
             <div class="hero-content">
                 <div class="hero-text">
-                    <h1>Premium Brand Collective for the East Coast</h1>
-                    <p>Connecting authentic specialty retailers with the most sought-after surf, skate, outdoor, and lifestyle brands. Decades of industry expertise, exclusive territories, and unmatched retail support.</p>
+                    <h1>Quality Brands. Independent Retailers. Trusted Partnerships.</h1>
+                    <p>For over 30 years, we've connected premium brands with independent retailers across the Northeast. From boutiques to surf shops, we believe in the power of authentic retail relationships.</p>
                     <div class="hero-buttons">
                         <a href="#brands" class="btn-primary">Explore Our Brands</a>
-                        <a href="#contact" class="btn-secondary">Become a Partner</a>
+                        <a href="#contact" class="btn-secondary">Start a Conversation</a>
                     </div>
                 </div>
                 <div class="hero-image">
-                    <img src="/api/placeholder/600/400" alt="Premium Brand Showcase" />
+                    <img src="/api/placeholder/550/400" alt="Quality Brand Partnership" />
                 </div>
+            </div>
+            
+            <div class="welcome-box">
+                <h3>Every Retailer Matters</h3>
+                <p>Whether you're just starting out or you've been in business for decades, if you're passionate about serving your customers with quality products, we want to work with you. Great businesses come in all sizes.</p>
             </div>
         </div>
     </section>
 
     <section id="brands" class="brands">
         <div class="container">
-            <div class="section-title scroll-reveal">
-                <h2>Our Premium Brand Portfolio</h2>
-                <p>Exclusive distribution partnerships with industry-leading brands across multiple categories</p>
+            <div class="section-title fade-in">
+                <h2>Premium Brands That Perform</h2>
+                <p>We represent established brands with loyal followings and proven sales records. These aren't just products—they're brands customers actively seek out.</p>
             </div>
             
             <div class="brand-grid">
-                <div class="brand-card scroll-reveal">
+                <div class="brand-card fade-in">
                     <div class="brand-header">
                         <div class="brand-logo">
                             <img src="/api/placeholder/60/60" alt="AVVA Logo" />
@@ -1138,10 +1036,10 @@
                             <div class="brand-category">Premium Menswear</div>
                         </div>
                     </div>
-                    <p class="brand-description">Contemporary menswear combining European sophistication with modern American style. Premium casual and business casual collections.</p>
+                    <p class="brand-description">Contemporary men's clothing that combines European design sensibility with American practicality. Quality construction and timeless style that customers return for season after season.</p>
                     <div class="brand-details">
                         <div class="brand-territory">
-                            <h4>Territory Coverage</h4>
+                            <h4>Coverage Area</h4>
                             <div class="territory-tags">
                                 <span class="territory-tag">MD</span>
                                 <span class="territory-tag">DE</span>
@@ -1155,49 +1053,50 @@
                             </div>
                         </div>
                         <div class="target-retailers">
-                            <h4>Target Retailers</h4>
+                            <h4>Ideal For</h4>
                             <div class="retailer-types">
                                 <span class="retailer-type">Men's Boutiques</span>
+                                <span class="retailer-type">Lifestyle Stores</span>
                                 <span class="retailer-type">Department Stores</span>
-                                <span class="retailer-type">Lifestyle Retailers</span>
                                 <span class="retailer-type">Contemporary Shops</span>
                             </div>
                         </div>
                     </div>
                 </div>
                 
-                <div class="brand-card scroll-reveal">
+                <div class="brand-card fade-in">
                     <div class="brand-header">
                         <div class="brand-logo">
                             <img src="/api/placeholder/60/60" alt="FAHLO Logo" />
                         </div>
                         <div class="brand-info">
                             <h3>FAHLO</h3>
-                            <div class="brand-category">Conservation Tech</div>
+                            <div class="brand-category">Wildlife Conservation Tech</div>
                         </div>
                     </div>
-                    <p class="brand-description">Innovative wildlife tracking bracelets that connect wearers with real animals, supporting conservation efforts worldwide.</p>
+                    <p class="brand-description">Innovative bracelets that connect wearers with real wild animals through GPS tracking technology. Customers love the conservation connection, and the interactive experience drives repeat purchases.</p>
                     <div class="brand-details">
                         <div class="brand-territory">
-                            <h4>Territory Coverage</h4>
+                            <h4>Coverage Area</h4>
                             <div class="territory-tags">
                                 <span class="territory-tag">NY</span>
                                 <span class="territory-tag">NJ</span>
                             </div>
                         </div>
                         <div class="target-retailers">
-                            <h4>Target Retailers</h4>
+                            <h4>Ideal For</h4>
                             <div class="retailer-types">
                                 <span class="retailer-type">Museum Shops</span>
-                                <span class="retailer-type">Zoo Gift Stores</span>
-                                <span class="retailer-type">Aquarium Shops</span>
-                                <span class="retailer-type">Eco Retailers</span>
+                                <span class="retailer-type">Zoo Stores</span>
+                                <span class="retailer-type">Aquariums</span>
+                                <span class="retailer-type">Nature Centers</span>
+                                <span class="retailer-type">Eco-Retailers</span>
                             </div>
                         </div>
                     </div>
                 </div>
                 
-                <div class="brand-card scroll-reveal">
+                <div class="brand-card fade-in">
                     <div class="brand-header">
                         <div class="brand-logo">
                             <img src="/api/placeholder/60/60" alt="Freestyle Watches Logo" />
@@ -1207,10 +1106,10 @@
                             <div class="brand-category">Action Sports Timepieces</div>
                         </div>
                     </div>
-                    <p class="brand-description">Performance watches designed for surfers and action sports athletes. Tide watches, surf watches, and durable timepieces.</p>
+                    <p class="brand-description">Durable, functional watches designed for surfers and action sports enthusiasts. Features like tide charts and water resistance make these essential gear for active lifestyles.</p>
                     <div class="brand-details">
                         <div class="brand-territory">
-                            <h4>Territory Coverage</h4>
+                            <h4>Coverage Area</h4>
                             <div class="territory-tags">
                                 <span class="territory-tag">NY</span>
                                 <span class="territory-tag">NJ</span>
@@ -1218,31 +1117,31 @@
                             </div>
                         </div>
                         <div class="target-retailers">
-                            <h4>Target Retailers</h4>
+                            <h4>Ideal For</h4>
                             <div class="retailer-types">
                                 <span class="retailer-type">Surf Shops</span>
+                                <span class="retailer-type">Beach Stores</span>
                                 <span class="retailer-type">Outdoor Retailers</span>
-                                <span class="retailer-type">Beach Shops</span>
-                                <span class="retailer-type">Sports Stores</span>
+                                <span class="retailer-type">Action Sports</span>
                             </div>
                         </div>
                     </div>
                 </div>
                 
-                <div class="brand-card scroll-reveal">
+                <div class="brand-card fade-in">
                     <div class="brand-header">
                         <div class="brand-logo">
                             <img src="/api/placeholder/60/60" alt="XCEL Wetsuits Logo" />
                         </div>
                         <div class="brand-info">
                             <h3>XCEL Wetsuits</h3>
-                            <div class="brand-category">Performance Water Sports</div>
+                            <div class="brand-category">Performance Water Gear</div>
                         </div>
                     </div>
-                    <p class="brand-description">Premium wetsuits and water sports accessories engineered for performance, comfort, and durability in all conditions.</p>
+                    <p class="brand-description">High-performance wetsuits and water sports accessories engineered for comfort and durability. Trusted by professionals and enthusiasts for superior thermal protection.</p>
                     <div class="brand-details">
                         <div class="brand-territory">
-                            <h4>Territory Coverage</h4>
+                            <h4>Coverage Area</h4>
                             <div class="territory-tags">
                                 <span class="territory-tag">NY</span>
                                 <span class="territory-tag">NJ</span>
@@ -1252,31 +1151,31 @@
                             </div>
                         </div>
                         <div class="target-retailers">
-                            <h4>Target Retailers</h4>
+                            <h4>Ideal For</h4>
                             <div class="retailer-types">
                                 <span class="retailer-type">Surf Shops</span>
-                                <span class="retailer-type">Water Sports</span>
                                 <span class="retailer-type">Dive Shops</span>
+                                <span class="retailer-type">Water Sports</span>
                                 <span class="retailer-type">Marine Stores</span>
                             </div>
                         </div>
                     </div>
                 </div>
                 
-                <div class="brand-card scroll-reveal">
+                <div class="brand-card fade-in">
                     <div class="brand-header">
                         <div class="brand-logo">
                             <img src="/api/placeholder/60/60" alt="Channel Island Surfboards Logo" />
                         </div>
                         <div class="brand-info">
                             <h3>Channel Island Surfboards</h3>
-                            <div class="brand-category">Premium Surfboards</div>
+                            <div class="brand-category">World-Class Surfboards</div>
                         </div>
                     </div>
-                    <p class="brand-description">Legendary surfboard craftsmanship from Santa Barbara. High-performance boards trusted by world champions and surf enthusiasts.</p>
+                    <p class="brand-description">Legendary surfboard craftsmanship from Santa Barbara. Ridden by world champions and respected by surfers everywhere for innovation and performance.</p>
                     <div class="brand-details">
                         <div class="brand-territory">
-                            <h4>Territory Coverage</h4>
+                            <h4>Coverage Area</h4>
                             <div class="territory-tags">
                                 <span class="territory-tag">NY</span>
                                 <span class="territory-tag">NJ</span>
@@ -1285,18 +1184,18 @@
                             </div>
                         </div>
                         <div class="target-retailers">
-                            <h4>Target Retailers</h4>
+                            <h4>Ideal For</h4>
                             <div class="retailer-types">
                                 <span class="retailer-type">Core Surf Shops</span>
                                 <span class="retailer-type">Board Shops</span>
-                                <span class="retailer-type">Coastal Retailers</span>
                                 <span class="retailer-type">Premium Surf</span>
+                                <span class="retailer-type">Coastal Retailers</span>
                             </div>
                         </div>
                     </div>
                 </div>
                 
-                <div class="brand-card scroll-reveal">
+                <div class="brand-card fade-in">
                     <div class="brand-header">
                         <div class="brand-logo">
                             <img src="/api/placeholder/60/60" alt="Carver Skateboards Logo" />
@@ -1306,10 +1205,10 @@
                             <div class="brand-category">Surf-Inspired Skateboards</div>
                         </div>
                     </div>
-                    <p class="brand-description">Revolutionary surf-inspired skateboard systems that bring the feeling of surfing to the streets with innovative truck technology.</p>
+                    <p class="brand-description">Revolutionary surf-inspired skateboard systems that bring the fluid feeling of surfing to the streets with innovative truck technology and premium construction.</p>
                     <div class="brand-details">
                         <div class="brand-territory">
-                            <h4>Territory Coverage</h4>
+                            <h4>Coverage Area</h4>
                             <div class="territory-tags">
                                 <span class="territory-tag">NY</span>
                                 <span class="territory-tag">NJ</span>
@@ -1318,7 +1217,7 @@
                             </div>
                         </div>
                         <div class="target-retailers">
-                            <h4>Target Retailers</h4>
+                            <h4>Ideal For</h4>
                             <div class="retailer-types">
                                 <span class="retailer-type">Skate Shops</span>
                                 <span class="retailer-type">Surf Shops</span>
@@ -1332,38 +1231,15 @@
         </div>
     </section>
 
-    <section id="business-model" class="business-model">
+    <section id="how-we-work" class="business-model">
         <div class="container">
-            <div class="section-title scroll-reveal">
-                <h2>Our Exclusive Distribution Model</h2>
-                <p>Premium brand partnerships with territorial exclusivity and dedicated retail support</p>
+            <div class="section-title fade-in">
+                <h2>How Our Partnership Works</h2>
+                <p>Straightforward business relationships built on mutual success and respect for independent retail.</p>
             </div>
             
             <div class="model-cards">
-                <div class="model-card scroll-reveal">
-                    <div class="model-icon">
-                        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
-                            <polyline points="2 17 12 22 22 17"></polyline>
-                            <polyline points="2 12 12 17 22 12"></polyline>
-                        </svg>
-                    </div>
-                    <h3 class="model-title">Exclusive B2B Distribution</h3>
-                    <p class="model-description">Direct wholesale partnerships connecting premium brands with carefully selected independent retailers who share our passion for quality and authenticity.</p>
-                </div>
-                
-                <div class="model-card scroll-reveal">
-                    <div class="model-icon">
-                        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-                            <circle cx="12" cy="10" r="3"></circle>
-                        </svg>
-                    </div>
-                    <h3 class="model-title">Territorial Exclusivity</h3>
-                    <p class="model-description">Protected territories ensure our retail partners have exclusive access to our brands in their markets, supporting sustainable business growth.</p>
-                </div>
-                
-                <div class="model-card scroll-reveal">
+                <div class="model-card fade-in">
                     <div class="model-icon">
                         <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
@@ -1372,8 +1248,29 @@
                             <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
                         </svg>
                     </div>
-                    <h3 class="model-title">Core Shop Partnership</h3>
-                    <p class="model-description">We focus exclusively on independent specialty retailers and core shops, maintaining the authentic culture and community connection that defines our brands.</p>
+                    <h3 class="model-title">Independent Retailer Focus</h3>
+                    <p class="model-description">We exclusively partner with independent retailers who understand their customers and communities. No big box competition—just authentic retail partnerships.</p>
+                </div>
+                
+                <div class="model-card fade-in">
+                    <div class="model-icon">
+                        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                            <circle cx="12" cy="10" r="3"></circle>
+                        </svg>
+                    </div>
+                    <h3 class="model-title">Protected Territory Rights</h3>
+                    <p class="model-description">When you partner with us, you receive exclusive territorial protection. Your investment in our brands is protected from local competition.</p>
+                </div>
+                
+                <div class="model-card fade-in">
+                    <div class="model-icon">
+                        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="model-title">Personal Service & Support</h3>
+                    <p class="model-description">Direct access to experienced sales professionals who understand your business. Real conversations, quick responses, and solutions that work.</p>
                 </div>
             </div>
         </div>
@@ -1381,24 +1278,24 @@
 
     <section id="services" class="services">
         <div class="container">
-            <div class="section-title scroll-reveal">
-                <h2>Comprehensive Retail Support</h2>
-                <p>Beyond distribution - we provide complete business support for our retail partners</p>
+            <div class="section-title fade-in">
+                <h2>Complete Business Support</h2>
+                <p>We go beyond simple distribution to provide comprehensive support that helps your retail business thrive.</p>
             </div>
             
             <div class="services-grid">
-                <div class="service-card scroll-reveal">
+                <div class="service-card fade-in">
                     <div class="service-icon">
                         <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
                             <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
                         </svg>
                     </div>
-                    <h3 class="service-title">Smart Inventory Management</h3>
-                    <p class="service-description">Advanced inventory planning with just-in-time delivery to optimize your retail space and improve cash flow management.</p>
+                    <h3 class="service-title">Smart Inventory Planning</h3>
+                    <p class="service-description">Strategic inventory management with flexible ordering and delivery schedules to optimize your cash flow and retail space efficiency.</p>
                 </div>
                 
-                <div class="service-card scroll-reveal">
+                <div class="service-card fade-in">
                     <div class="service-icon">
                         <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
@@ -1407,11 +1304,11 @@
                             <line x1="16" y1="17" x2="8" y2="17"></line>
                         </svg>
                     </div>
-                    <h3 class="service-title">Product Education</h3>
-                    <p class="service-description">Comprehensive training programs for your staff on product features, benefits, and selling techniques to maximize conversion rates.</p>
+                    <h3 class="service-title">Product Training & Education</h3>
+                    <p class="service-description">Comprehensive training programs for you and your staff on product features, benefits, and effective selling techniques to maximize conversion rates.</p>
                 </div>
                 
-                <div class="service-card scroll-reveal">
+                <div class="service-card fade-in">
                     <div class="service-icon">
                         <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
@@ -1419,11 +1316,11 @@
                             <line x1="9" y1="21" x2="9" y2="9"></line>
                         </svg>
                     </div>
-                    <h3 class="service-title">Visual Merchandising</h3>
-                    <p class="service-description">Professional merchandising support and display setup to create compelling retail presentations that drive sales.</p>
+                    <h3 class="service-title">Visual Merchandising Support</h3>
+                    <p class="service-description">Professional merchandising guidance and display setup assistance to create compelling presentations that showcase products effectively.</p>
                 </div>
                 
-                <div class="service-card scroll-reveal">
+                <div class="service-card fade-in">
                     <div class="service-icon">
                         <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <circle cx="12" cy="12" r="10"></circle>
@@ -1432,8 +1329,8 @@
                             <line x1="15" y1="9" x2="15.01" y2="9"></line>
                         </svg>
                     </div>
-                    <h3 class="service-title">Marketing Collaboration</h3>
-                    <p class="service-description">Co-op advertising programs, digital marketing assets, and promotional materials to amplify your brand presence.</p>
+                    <h3 class="service-title">Marketing & Promotional Support</h3>
+                    <p class="service-description">Co-op advertising opportunities, digital marketing assets, and promotional materials to help amplify your brand presence and drive sales.</p>
                 </div>
             </div>
         </div>
@@ -1441,39 +1338,40 @@
 
     <section id="about" class="about">
         <div class="container">
-            <div class="section-title scroll-reveal">
-                <h2>Industry Leadership & Heritage</h2>
-                <p>Built on decades of expertise and authentic relationships in the action sports community</p>
+            <div class="section-title fade-in">
+                <h2>Meet Dean Schoonover</h2>
+                <p>Three decades of industry experience and authentic relationships built on trust and mutual success.</p>
             </div>
             
             <div class="about-content">
-                <div class="about-image scroll-reveal">
-                    <img src="/api/placeholder/500/400" alt="Dean Schoonover - Industry Leader" />
+                <div class="about-image fade-in">
+                    <img src="/api/placeholder/450/350" alt="Dean Schoonover - Industry Veteran" />
                 </div>
-                <div class="about-text scroll-reveal">
-                    <h3>Our Story</h3>
-                    <p>Founded by industry veteran Dean Schoonover, Coastal Connections represents the culmination of decades spent building authentic relationships within the surf, skate, and action sports communities. Our deep understanding of both brand needs and retailer challenges allows us to create partnerships that drive mutual success.</p>
-                    <p>We're not just distributors – we're active participants in the culture we serve. This insider perspective enables us to curate brand portfolios that resonate with core customers while providing retailers with the support they need to thrive in competitive markets.</p>
+                <div class="about-text fade-in">
+                    <h3>Industry Leadership & Experience</h3>
+                    <p>Dean founded Coastal Connections with a simple philosophy: great relationships create great business. With over 30 years in the action sports and retail industry, Dean understands both the challenges retailers face and what brands need to succeed.</p>
+                    <p>This deep industry knowledge allows us to create partnerships that work for everyone. We know which products perform in different markets, understand seasonal trends, and can help you make informed decisions about inventory and merchandising.</p>
+                    <p>Our approach combines old-school relationship building with modern business practices. We believe in personal service, honest communication, and building partnerships that last for years.</p>
                     
                     <div class="about-highlight">
-                        <h4>🏆 Hall of Fame Recognition</h4>
-                        <p>Dean Schoonover's induction into the Action Sports Industry Hall of Fame in 2025 recognizes his significant contributions to the surf and action sports community over multiple decades.</p>
+                        <h4>🏆 Hall of Fame Recognition 2025</h4>
+                        <p>Dean's significant contributions to the action sports industry will be recognized with his induction into the Action Sports Industry Hall of Fame in 2025—a testament to decades of dedicated service to retailers and brands.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="testimonials" class="testimonials">
+    <section class="testimonials">
         <div class="container">
-            <div class="section-title scroll-reveal">
-                <h2>Trusted by Industry Leaders</h2>
-                <p>Hear from our retail partners about their experience with Coastal Connections</p>
+            <div class="section-title fade-in">
+                <h2>Retailer Success Stories</h2>
+                <p>Hear directly from our retail partners about their experience working with Coastal Connections.</p>
             </div>
             
             <div class="testimonials-grid">
-                <div class="testimonial-card scroll-reveal">
-                    <p class="testimonial-text">"Coastal Connections has transformed how we approach brand partnerships. Their exclusive territories give us the confidence to invest in inventory, and their marketing support has significantly boosted our AVVA menswear sales. Dean's team truly understands retail."</p>
+                <div class="testimonial-card fade-in">
+                    <p class="testimonial-text">"Working with Coastal Connections has been a game-changer for our menswear section. The AVVA line performs consistently well, and Dean's team provides the kind of support that's rare in this business. They understand retail and genuinely want us to succeed."</p>
                     <div class="testimonial-author">
                         <div class="author-image">
                             <img src="/api/placeholder/60/60" alt="Michael Reynolds" />
@@ -1485,8 +1383,8 @@
                     </div>
                 </div>
                 
-                <div class="testimonial-card scroll-reveal">
-                    <p class="testimonial-text">"The FAHLO wildlife tracking bracelets have been incredible for our conservation mission. Coastal Connections understood our unique needs as a nature center and provided exactly the right product mix. Our visitors love the interactive technology."</p>
+                <div class="testimonial-card fade-in">
+                    <p class="testimonial-text">"The FAHLO wildlife tracking bracelets have been perfect for our conservation mission. Our visitors love the technology and the connection to real animals. Dean understood our unique needs from day one and provided exactly the right product mix."</p>
                     <div class="testimonial-author">
                         <div class="author-image">
                             <img src="/api/placeholder/60/60" alt="Sarah Johnson" />
@@ -1498,8 +1396,8 @@
                     </div>
                 </div>
                 
-                <div class="testimonial-card scroll-reveal">
-                    <p class="testimonial-text">"Channel Island surfboards and Carver skateboards are perfect for our core customer base. Coastal Connections provides the industry knowledge and brand authenticity that sets us apart from big box competitors. Their support is unmatched."</p>
+                <div class="testimonial-card fade-in">
+                    <p class="testimonial-text">"Dean's been our partner for years with Channel Island boards and Carver skates. These brands have serious credibility with our core customers. When surfers see CI boards in our shop, they know we're legit. That authenticity is priceless."</p>
                     <div class="testimonial-author">
                         <div class="author-image">
                             <img src="/api/placeholder/60/60" alt="Jason Torres" />
@@ -1516,16 +1414,16 @@
 
     <section class="cta-banner">
         <div class="container">
-            <div class="banner-content scroll-reveal">
-                <h2>Ready to Elevate Your Retail Business?</h2>
-                <p>Join our exclusive network of premium retailers and gain access to industry-leading brands with territorial protection and comprehensive support.</p>
+            <div class="banner-content fade-in">
+                <h2>Ready to Build a Partnership?</h2>
+                <p>Whether you're interested in specific brands or just want to explore opportunities, we'd love to start a conversation about how we can work together.</p>
                 <div class="banner-buttons">
-                    <a href="#contact" class="btn-primary">Become a Partner</a>
+                    <a href="#contact" class="btn-primary">Contact Us Today</a>
                     <a href="tel:732-778-3326" class="btn-secondary" style="display: flex; align-items: center; text-decoration: none;">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right: 10px;">
                             <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
                         </svg>
-                        Call Now: (732) 778-3326
+                        Call: (732) 778-3326
                     </a>
                 </div>
             </div>
@@ -1534,9 +1432,9 @@
 
     <section id="contact" class="contact">
         <div class="container">
-            <div class="section-title scroll-reveal">
-                <h2>Let's Build Something Great Together</h2>
-                <p>Ready to partner with us? Get in touch to discuss exclusive opportunities.</p>
+            <div class="section-title fade-in">
+                <h2>Let's Start the Conversation</h2>
+                <p>Ready to explore partnership opportunities? We're here to answer questions and discuss how we can work together.</p>
             </div>
             
             <div class="contact-container">
@@ -1552,6 +1450,7 @@
                         <div class="contact-text">
                             <h4>Phone</h4>
                             <p>(732) 778-3326</p>
+                            <p>Direct line - we prefer conversations over emails</p>
                         </div>
                     </div>
                     
@@ -1565,6 +1464,7 @@
                         <div class="contact-text">
                             <h4>Email</h4>
                             <p>deanosales@aol.com</p>
+                            <p>We respond to all inquiries promptly</p>
                         </div>
                     </div>
                     
@@ -1576,8 +1476,8 @@
                             </svg>
                         </div>
                         <div class="contact-text">
-                            <h4>Service Area</h4>
-                            <p>Northeast & Mid-Atlantic</p>
+                            <h4>Service Territory</h4>
+                            <p>Northeast & Mid-Atlantic States</p>
                             <p>MD, DE, NJ, NY, RI, NH, VT, MA, PA</p>
                         </div>
                     </div>
@@ -1602,12 +1502,12 @@
                         </div>
                         
                         <div class="form-group">
-                            <label for="business">Business Name</label>
+                            <label for="business">Store Name</label>
                             <input type="text" id="business" name="business" required placeholder="Your store or business name">
                         </div>
                         
                         <div class="form-group">
-                            <label for="location">Location</label>
+                            <label for="location">Store Location</label>
                             <input type="text" id="location" name="location" required placeholder="City, State">
                         </div>
                         
@@ -1621,12 +1521,13 @@
                                 <option value="channel">Channel Island Surfboards</option>
                                 <option value="carver">Carver Skateboards</option>
                                 <option value="all">All Brands</option>
+                                <option value="questions">General Inquiry</option>
                             </select>
                         </div>
                         
                         <div class="form-group">
                             <label for="message">Tell Us About Your Business</label>
-                            <textarea id="message" name="message" placeholder="Describe your store, target customers, and why you'd be a great partner..."></textarea>
+                            <textarea id="message" name="message" placeholder="What type of store do you operate? Who are your customers? What questions can we answer for you?"></textarea>
                         </div>
                         
                         <button type="submit" class="form-submit">Submit Partnership Inquiry</button>
@@ -1641,11 +1542,11 @@
             <div class="footer-content">
                 <div class="footer-column">
                     <h4>Coastal<span style="color: var(--accent);">Connections</span></h4>
-                    <p>Premium brand collective connecting authentic specialty retailers with industry-leading surf, skate, outdoor, and lifestyle brands across the Northeast and Mid-Atlantic regions.</p>
+                    <p>Connecting premium brands with independent retailers across the Northeast. Building authentic partnerships that drive mutual success for over three decades.</p>
                 </div>
                 
                 <div class="footer-column">
-                    <h4>Our Brands</h4>
+                    <h4>Our Premium Brands</h4>
                     <a href="#brands">AVVA Premium Menswear</a>
                     <a href="#brands">FAHLO Wildlife Trackers</a>
                     <a href="#brands">Freestyle Watches</a>
@@ -1655,24 +1556,25 @@
                 </div>
                 
                 <div class="footer-column">
-                    <h4>Services</h4>
-                    <a href="#services">Inventory Management</a>
-                    <a href="#services">Product Education</a>
-                    <a href="#services">Visual Merchandising</a>
-                    <a href="#services">Marketing Support</a>
-                    <a href="#business-model">Exclusive Territories</a>
+                    <h4>Partnership Services</h4>
+                    <a href="#services">Inventory Planning</a>
+                    <a href="#services">Staff Training</a>
+                    <a href="#services">Merchandising Support</a>
+                    <a href="#services">Marketing Materials</a>
+                    <a href="#how-we-work">Territory Protection</a>
                 </div>
                 
                 <div class="footer-column">
-                    <h4>Contact</h4>
+                    <h4>Contact Information</h4>
                     <p>Dean Schoonover, Founder</p>
                     <p>Phone: (732) 778-3326</p>
                     <p>Email: deanosales@aol.com</p>
+                    <p>Serving the Northeast & Mid-Atlantic</p>
                 </div>
             </div>
             
             <div class="copyright">
-                <p>© 2025 Coastal Connections Corp. All rights reserved. | Hall of Fame Recognition 2025</p>
+                <p>© 2025 Coastal Connections Corp. All rights reserved. | Hall of Fame Inductee 2025</p>
             </div>
         </div>
     </footer>
@@ -1681,11 +1583,11 @@
         document.addEventListener('DOMContentLoaded', function() {
             // Scroll reveal animation
             function revealOnScroll() {
-                const reveals = document.querySelectorAll('.scroll-reveal');
+                const reveals = document.querySelectorAll('.fade-in');
                 
                 reveals.forEach(element => {
                     const elementTop = element.getBoundingClientRect().top;
-                    const elementVisible = 150;
+                    const elementVisible = 100;
                     
                     if (elementTop < window.innerHeight - elementVisible) {
                         element.classList.add('active');
@@ -1720,12 +1622,12 @@
                     const successMessage = document.createElement('div');
                     successMessage.innerHTML = `
                         <div style="text-align: center; padding: 40px 20px; color: var(--white);">
-                            <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="var(--secondary)" stroke-width="2" style="margin: 0 auto 20px; display: block;">
+                            <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" style="margin: 0 auto 20px; display: block;">
                                 <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
                                 <polyline points="22 4 12 14.01 9 11.01"></polyline>
                             </svg>
-                            <h3 style="margin-bottom: 15px; color: var(--secondary); font-size: 28px;">Partnership Inquiry Received!</h3>
-                            <p style="font-size: 18px; line-height: 1.6; opacity: 0.9;">Thank you for your interest in partnering with Coastal Connections. We'll review your application and contact you within 1-2 business days to discuss next steps.</p>
+                            <h3 style="margin-bottom: 15px; color: var(--white); font-size: 28px;">Thank You for Your Interest!</h3>
+                            <p style="font-size: 18px; line-height: 1.6; opacity: 0.9;">We've received your partnership inquiry and will be in touch within 1-2 business days to discuss next steps. Looking forward to exploring how we can work together.</p>
                         </div>
                     `;
                     
@@ -1741,21 +1643,9 @@
             const mobileToggle = document.getElementById('mobile-menu-toggle');
             if (mobileToggle) {
                 mobileToggle.addEventListener('click', function() {
-                    // Mobile menu implementation would go here
                     console.log('Mobile menu toggle clicked');
                 });
             }
-            
-            // Add interactive hover effects to brand cards
-            document.querySelectorAll('.brand-card').forEach(card => {
-                card.addEventListener('mouseenter', function() {
-                    this.style.transform = 'translateY(-15px) scale(1.02)';
-                });
-                
-                card.addEventListener('mouseleave', function() {
-                    this.style.transform = 'translateY(0) scale(1)';
-                });
-            });
         });
     </script>
 </body>
