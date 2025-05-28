@@ -1,31 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coastal Connections Corp - Premium Brand Partners for Independent Retailers</title>
+    <title>Coastal Connections - Dean Schoonover | Premium Surf & Lifestyle Brands</title>
+    <meta name="description" content="Dean Schoonover's Coastal Connections - 40 years connecting premium surf and lifestyle brands with retailers throughout the Northeast. Representing follow, XCEL, Channel Islands, Carver, Freestyle, and AVA.">
+    <meta name="keywords" content="surf brands, wholesale, Dean Schoonover, follow bracelets, XCEL wetsuits, Channel Islands surfboards, Carver skateboards, Northeast surf retail">
+    <meta name="author" content="Dean Schoonover">
+    
+    <!-- Open Graph / Social Media -->
+    <meta property="og:title" content="Coastal Connections - Premium Surf & Lifestyle Brands">
+    <meta property="og:description" content="Connecting quality brands with leading retailers throughout the Northeast for over 40 years.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.coastalconnections.info">
+    
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "Organization",
-      "name": "Coastal Connections Corp",
-      "url": "https://www.coastalconnections.com",
-      "logo": "https://www.coastalconnections.com/images/logo.png"
+      "name": "Coastal Connections",
+      "url": "https://www.coastalconnections.info",
+      "founder": {
+        "@type": "Person",
+        "name": "Dean Schoonover",
+        "jobTitle": "Sales Representative",
+        "description": "40 years connecting premium surf and lifestyle brands with retailers"
+      },
+      "areaServed": {
+        "@type": "Place",
+        "name": "Northeast United States"
+      }
     }
     </script>
-    <link rel="icon" href="/images/favicon.png" type="image/png">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
     <style>
         :root {
-            --primary: #1A5F7A;
-            --secondary: #4A90A4;
-            --accent: #D2691E;
-            --dark: #1F2937;
-            --light: #FAFAFA;
+            --primary: #0B5394;  /* Caribbean Blue */
+            --secondary: #5B9BD5; /* Lighter Caribbean Blue */
+            --accent: #41719C;   /* Complementary Blue */
+            --dark: #2C3E50;
+            --light: #F0F8FF;    /* Alice Blue */
             --white: #FFFFFF;
             --cream: #FFF8E7;
             --warm-gray: #F7F7F5;
-            --success: #059669;
             --border: #E5E7EB;
             --shadow: rgba(0, 0, 0, 0.1);
         }
@@ -42,6 +64,19 @@
             background: var(--light);
             line-height: 1.6;
             font-size: 16px;
+            overflow-x: hidden;
+        }
+        
+        /* Subtle wave background */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(180deg, rgba(11,83,148,0.02) 0%, rgba(91,155,213,0.02) 100%);
+            z-index: -1;
         }
         
         .container {
@@ -58,7 +93,11 @@
             position: sticky;
             top: 0;
             z-index: 100;
-            border-bottom: 2px solid var(--accent);
+            transition: all 0.3s ease;
+        }
+        
+        header.scrolled {
+            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
         }
         
         nav {
@@ -72,16 +111,7 @@
             font-size: 28px;
             font-weight: 700;
             color: var(--primary);
-            display: flex;
-            align-items: center;
-        }
-        
-        .logo span {
-            color: var(--secondary);
-        }
-        
-        .logo span.accent {
-            color: var(--accent);
+            text-decoration: none;
         }
         
         .nav-links {
@@ -105,7 +135,7 @@
             left: 0;
             width: 0;
             height: 2px;
-            background: var(--accent);
+            background: var(--primary);
             transition: width 0.3s ease;
         }
         
@@ -125,32 +155,24 @@
             font-weight: 600;
             text-decoration: none;
             transition: all 0.3s ease;
-            box-shadow: 0 4px 12px rgba(26, 95, 122, 0.3);
+            box-shadow: 0 4px 12px rgba(11, 83, 148, 0.3);
+            display: inline-block;
+            cursor: pointer;
+            border: none;
         }
         
         .cta-button:hover {
-            background: var(--secondary);
+            background: #094270;
             transform: translateY(-2px);
-            box-shadow: 0 6px 16px rgba(26, 95, 122, 0.4);
+            box-shadow: 0 6px 16px rgba(11, 83, 148, 0.4);
         }
 
         /* Hero Section */
         .hero {
             padding: 80px 0 60px;
-            background: linear-gradient(135deg, var(--cream) 0%, var(--warm-gray) 100%);
+            background: linear-gradient(135deg, var(--white) 0%, rgba(91,155,213,0.1) 100%);
             position: relative;
             overflow: hidden;
-        }
-        
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 40%;
-            height: 100%;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="dots" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="1.5" fill="rgba(26,95,122,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23dots)"/></svg>');
-            opacity: 0.6;
         }
         
         .hero-content {
@@ -171,6 +193,11 @@
             margin-bottom: 24px;
             color: var(--primary);
             line-height: 1.2;
+        }
+        
+        .hero h1 .highlight-years {
+            color: var(--accent);
+            font-size: 52px;
         }
         
         .hero p {
@@ -195,13 +222,13 @@
             font-weight: 600;
             text-decoration: none;
             transition: all 0.3s ease;
-            box-shadow: 0 6px 20px rgba(26, 95, 122, 0.3);
+            box-shadow: 0 6px 20px rgba(11, 83, 148, 0.3);
         }
         
         .btn-primary:hover {
-            background: var(--secondary);
+            background: #094270;
             transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(26, 95, 122, 0.4);
+            box-shadow: 0 8px 25px rgba(11, 83, 148, 0.4);
         }
         
         .btn-secondary {
@@ -224,6 +251,7 @@
         
         .hero-image {
             flex: 1;
+            max-width: 500px;
         }
         
         .hero-image img {
@@ -237,34 +265,13 @@
             transform: scale(1.02);
         }
 
-        /* Welcome Box */
-        .welcome-box {
-            background: var(--white);
-            padding: 32px;
-            border-radius: 12px;
-            margin: 50px 0;
-            box-shadow: 0 8px 30px var(--shadow);
-            text-align: center;
-            border-left: 4px solid var(--accent);
-        }
-        
-        .welcome-box h3 {
-            font-size: 24px;
-            color: var(--primary);
-            margin-bottom: 16px;
-            font-weight: 700;
-        }
-        
-        .welcome-box p {
-            font-size: 18px;
-            line-height: 1.6;
-            color: var(--dark);
-            opacity: 0.9;
-        }
-
         /* Section Styling */
         section {
             padding: 80px 0;
+            background: var(--white);
+            margin-bottom: 40px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
         }
         
         .section-title {
@@ -288,156 +295,148 @@
             opacity: 0.8;
         }
 
-        /* Brand Showcase */
-        .brands {
-            background: var(--white);
-        }
-        
-        .brand-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 32px;
+        /* Brand Showcase - Enhanced */
+        .brands-container {
+            max-width: 900px;
+            margin: 0 auto;
+            margin-top: 40px;
         }
         
         .brand-card {
             background: var(--white);
-            padding: 32px 28px;
-            border-radius: 16px;
-            box-shadow: 0 8px 30px var(--shadow);
-            transition: all 0.3s ease;
-            border-top: 4px solid var(--secondary);
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            cursor: pointer;
+            transition: all 0.4s ease;
+            border: 2px solid transparent;
             position: relative;
             overflow: hidden;
         }
         
-        .brand-card::before {
-            content: '';
-            position: absolute;
-            top: -2px;
-            left: -2px;
-            right: -2px;
-            height: 4px;
-            background: linear-gradient(90deg, var(--secondary), var(--accent));
-            border-radius: 16px 16px 0 0;
+        .brand-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 35px rgba(0,0,0,0.15);
+            border-color: var(--primary);
         }
         
-        .brand-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 16px 50px rgba(0, 0, 0, 0.15);
+        .brand-card.expanded {
+            border-color: var(--primary);
+            background: #f8fbff;
         }
         
         .brand-header {
             display: flex;
+            justify-content: space-between;
             align-items: center;
-            margin-bottom: 24px;
+            margin-bottom: 15px;
         }
         
         .brand-logo {
-            width: 80px;
-            height: 80px;
-            background: var(--warm-gray);
-            border-radius: 12px;
+            flex: 1;
             display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-right: 20px;
-            border: 1px solid var(--border);
-            transition: all 0.3s ease;
-        }
-        
-        .brand-card:hover .brand-logo {
-            transform: scale(1.05);
-            box-shadow: 0 4px 12px var(--shadow);
+            flex-direction: column;
+            gap: 8px;
         }
         
         .brand-logo img {
-            max-width: 60px;
-            max-height: 60px;
+            height: 40px;
+            width: auto;
             object-fit: contain;
+            object-position: left center;
+            transition: transform 0.3s ease, filter 0.3s ease;
         }
         
-        .brand-info h3 {
-            font-size: 24px;
+        .brand-card:hover .brand-logo img {
+            transform: scale(1.05);
+            filter: brightness(1.1);
+        }
+        
+        .brand-logo.center img {
+            object-position: center center;
+        }
+        
+        /* Special sizing for specific logos if needed */
+        .brand-logo.large img {
+            height: 50px;
+        }
+        
+        .brand-logo.small img {
+            height: 35px;
+        }
+        
+        .brand-name {
+            font-size: 28px;
             font-weight: 700;
             color: var(--primary);
-            margin-bottom: 6px;
+            margin-bottom: 5px;
         }
         
-        .brand-category {
-            font-size: 14px;
-            color: var(--secondary);
-            font-weight: 500;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
+        .brand-name.lowercase {
+            text-transform: none;
         }
         
-        .brand-description {
-            margin-bottom: 24px;
-            color: var(--dark);
-            line-height: 1.6;
+        .brand-tagline {
             font-size: 16px;
+            color: #666;
+            font-style: italic;
+        }
+        
+        .expand-icon {
+            transition: transform 0.3s ease;
+            color: var(--primary);
+            font-size: 24px;
+        }
+        
+        .expand-icon.rotated {
+            transform: rotate(180deg);
+        }
+        
+        .brand-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .brand-content.expanded {
+            max-height: 1000px;
         }
         
         .brand-details {
+            padding-top: 20px;
+            border-top: 1px solid #e0e0e0;
+        }
+        
+        .brand-info-grid {
             display: grid;
-            gap: 16px;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 20px;
         }
         
-        .brand-territory {
-            background: var(--warm-gray);
-            padding: 16px;
-            border-radius: 10px;
-            border-left: 3px solid var(--secondary);
-        }
-        
-        .brand-territory h4 {
-            font-size: 12px;
-            font-weight: 600;
+        .brand-info-section h4 {
             color: var(--primary);
-            margin-bottom: 8px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
+            margin-bottom: 10px;
+            font-size: 16px;
         }
         
-        .territory-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 6px;
+        .brand-info-section ul {
+            list-style: none;
+            padding: 0;
         }
         
-        .territory-tag {
-            background: var(--white);
+        .brand-info-section li {
+            padding: 5px 0;
+            padding-left: 20px;
+            position: relative;
+        }
+        
+        .brand-info-section li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
             color: var(--primary);
-            padding: 4px 10px;
-            border-radius: 16px;
-            font-size: 12px;
-            font-weight: 600;
-            border: 1px solid var(--border);
-        }
-        
-        .target-retailers h4 {
-            font-size: 12px;
-            font-weight: 600;
-            color: var(--primary);
-            margin-bottom: 8px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-        
-        .retailer-types {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 6px;
-        }
-        
-        .retailer-type {
-            background: rgba(210, 105, 30, 0.1);
-            color: var(--accent);
-            padding: 4px 10px;
-            border-radius: 16px;
-            font-size: 12px;
-            font-weight: 500;
-            border: 1px solid rgba(210, 105, 30, 0.2);
         }
 
         /* Business Model */
@@ -502,183 +501,95 @@
             background: var(--white);
         }
         
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 28px;
+        .services-list {
+            max-width: 800px;
+            margin: 0 auto;
+            margin-top: 40px;
         }
         
-        .service-card {
+        .service-item {
             background: var(--white);
-            padding: 32px 24px;
-            border-radius: 16px;
-            box-shadow: 0 6px 25px var(--shadow);
-            text-align: center;
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
             transition: all 0.3s ease;
-            border: 1px solid var(--border);
+            border-left: 4px solid var(--primary);
         }
         
-        .service-card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
-            border-color: var(--secondary);
+        .service-item:hover {
+            transform: translateX(10px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.12);
         }
         
-        .service-icon {
-            width: 70px;
-            height: 70px;
-            background: var(--accent);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 20px;
-            color: var(--white);
-            transition: all 0.3s ease;
-        }
-        
-        .service-card:hover .service-icon {
-            background: var(--primary);
-            transform: scale(1.1);
-        }
-        
-        .service-title {
-            font-size: 20px;
-            font-weight: 700;
-            margin-bottom: 16px;
+        .service-item h3 {
             color: var(--primary);
+            font-size: 22px;
+            margin-bottom: 15px;
         }
         
         .service-description {
             color: var(--dark);
             line-height: 1.6;
-            font-size: 15px;
-            opacity: 0.9;
+            margin-bottom: 15px;
+        }
+        
+        .service-details {
+            background: rgba(91,155,213,0.05);
+            padding: 15px;
+            border-radius: 8px;
+            font-size: 14px;
+            color: #666;
         }
 
         /* About */
         .about {
-            background: var(--cream);
+            background: var(--light);
         }
         
         .about-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            align-items: center;
+            display: flex;
+            gap: 40px;
+            align-items: flex-start;
+            margin-top: 40px;
         }
         
-        .about-image {
-            position: relative;
+        .about-text {
+            flex: 1;
         }
         
-        .about-image img {
-            width: 100%;
-            border-radius: 16px;
-            box-shadow: 0 12px 40px var(--shadow);
-            transition: transform 0.4s ease;
+        .about-sidebar {
+            flex: 0 0 350px;
         }
         
-        .about-image:hover img {
-            transform: scale(1.02);
-        }
-        
-        .about-text h3 {
-            font-size: 36px;
-            font-weight: 800;
-            margin-bottom: 24px;
-            color: var(--primary);
-        }
-        
-        .about-text p {
+        .achievement-card {
+            background: rgba(91,155,213,0.05);
+            padding: 20px;
+            border-radius: 10px;
             margin-bottom: 20px;
-            color: var(--dark);
-            line-height: 1.7;
-            font-size: 16px;
-            opacity: 0.9;
+            border-left: 4px solid var(--primary);
         }
         
-        .about-highlight {
-            background: var(--white);
-            padding: 28px;
-            border-radius: 12px;
-            margin-top: 32px;
-            box-shadow: 0 6px 20px var(--shadow);
-            border-left: 4px solid var(--accent);
-        }
-        
-        .about-highlight h4 {
+        .achievement-card h4 {
             color: var(--primary);
-            font-size: 20px;
-            margin-bottom: 12px;
-            font-weight: 700;
+            margin-bottom: 10px;
         }
-
+        
         /* Testimonials */
-        .testimonials {
-            background: var(--white);
-        }
-        
-        .testimonials-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 32px;
-        }
-        
-        .testimonial-card {
-            background: var(--warm-gray);
-            padding: 32px 28px;
-            border-radius: 16px;
-            box-shadow: 0 6px 25px var(--shadow);
-            transition: all 0.3s ease;
-            border-top: 3px solid var(--secondary);
-        }
-        
-        .testimonial-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
-        }
-        
-        .testimonial-text {
+        .testimonial {
+            background: var(--light);
+            padding: 30px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            border-left: 4px solid var(--primary);
             font-style: italic;
-            margin-bottom: 24px;
-            line-height: 1.7;
-            color: var(--dark);
-            font-size: 16px;
         }
         
         .testimonial-author {
-            display: flex;
-            align-items: center;
-        }
-        
-        .author-image {
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            overflow: hidden;
-            margin-right: 16px;
-            border: 3px solid var(--secondary);
-            box-shadow: 0 4px 12px var(--shadow);
-        }
-        
-        .author-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        
-        .author-info h4 {
-            font-size: 18px;
+            font-weight: 700;
             color: var(--primary);
-            margin-bottom: 4px;
-            font-weight: 600;
-        }
-        
-        .author-info p {
-            font-size: 14px;
-            color: var(--dark);
-            opacity: 0.8;
+            margin-top: 15px;
+            font-style: normal;
         }
 
         /* Contact */
@@ -692,120 +603,70 @@
             color: var(--white);
         }
         
-        .contact-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
+        .contact-content {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
         }
         
-        .contact-info h3 {
-            font-size: 28px;
-            margin-bottom: 32px;
-            color: var(--white);
-            font-weight: 700;
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 30px;
+            margin-bottom: 40px;
         }
         
         .contact-item {
             display: flex;
-            align-items: flex-start;
-            margin-bottom: 28px;
-        }
-        
-        .contact-icon {
-            width: 60px;
-            height: 60px;
-            background: rgba(255, 255, 255, 0.15);
-            border-radius: 50%;
-            display: flex;
             align-items: center;
-            justify-content: center;
-            margin-right: 16px;
-            color: var(--white);
-            backdrop-filter: blur(10px);
-        }
-        
-        .contact-text h4 {
+            gap: 10px;
             font-size: 18px;
-            margin-bottom: 8px;
             color: var(--white);
+        }
+        
+        .contact-item strong {
+            font-weight: 600;
+            margin-right: 5px;
+        }
+        
+        .contact-item a {
+            color: var(--white);
+            text-decoration: none;
             font-weight: 600;
         }
         
-        .contact-text p {
-            line-height: 1.6;
+        .contact-item a:hover {
+            text-decoration: underline;
+        }
+
+        /* Form Styles */
+        form {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        
+        form input,
+        form select,
+        form textarea {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid rgba(255,255,255,0.3);
+            border-radius: 8px;
             font-size: 16px;
-            opacity: 0.9;
-        }
-        
-        .contact-form {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 36px;
-            border-radius: 16px;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-        
-        .contact-form h3 {
-            font-size: 28px;
-            margin-bottom: 28px;
-            text-align: center;
-            color: var(--white);
-            font-weight: 700;
-        }
-        
-        .form-group {
             margin-bottom: 20px;
-        }
-        
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: 500;
-            color: var(--white);
-            font-size: 15px;
-        }
-        
-        .form-group input,
-        .form-group textarea,
-        .form-group select {
-            width: 100%;
-            padding: 14px 16px;
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            border-radius: 10px;
-            font-size: 15px;
-            background: rgba(255, 255, 255, 0.9);
+            transition: all 0.3s ease;
+            background: rgba(255,255,255,0.9);
             color: var(--dark);
-            transition: all 0.3s ease;
         }
         
-        .form-group input:focus,
-        .form-group textarea:focus,
-        .form-group select:focus {
-            border-color: var(--accent);
+        form input:focus,
+        form select:focus,
+        form textarea:focus {
             outline: none;
+            border-color: var(--white);
+            box-shadow: 0 0 0 3px rgba(255,255,255,0.2);
             background: var(--white);
-            box-shadow: 0 0 0 3px rgba(210, 105, 30, 0.2);
-        }
-        
-        .form-submit {
-            background: var(--accent);
-            color: var(--white);
-            padding: 16px 32px;
-            border: none;
-            border-radius: 10px;
-            font-size: 16px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            width: 100%;
-            box-shadow: 0 6px 20px rgba(210, 105, 30, 0.3);
-        }
-        
-        .form-submit:hover {
-            background: var(--white);
-            color: var(--accent);
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(210, 105, 30, 0.4);
         }
 
         /* Footer */
@@ -838,7 +699,7 @@
         }
         
         .footer-column a:hover {
-            color: var(--accent);
+            color: var(--secondary);
             transform: translateX(4px);
         }
         
@@ -890,7 +751,52 @@
         }
 
         /* Responsive Design */
-        @media (max-width: 768px) {
+        /* Loading animation */
+        .preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: white;
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: opacity 0.5s ease;
+        }
+        
+        .preloader.loaded {
+            opacity: 0;
+            pointer-events: none;
+        }
+        
+        .wave-loader {
+            display: flex;
+            gap: 5px;
+        }
+        
+        .wave-loader span {
+            width: 4px;
+            height: 40px;
+            background: var(--primary);
+            animation: wave-load 1s ease-in-out infinite;
+        }
+        
+        .wave-loader span:nth-child(1) { animation-delay: 0s; }
+        .wave-loader span:nth-child(2) { animation-delay: 0.1s; }
+        .wave-loader span:nth-child(3) { animation-delay: 0.2s; }
+        .wave-loader span:nth-child(4) { animation-delay: 0.3s; }
+        .wave-loader span:nth-child(5) { animation-delay: 0.4s; }
+        
+        @keyframes wave-load {
+            0%, 100% {
+                transform: scaleY(1);
+            }
+            50% {
+                transform: scaleY(1.5);
+            }
+        }
             .hero h1 {
                 font-size: 36px;
             }
@@ -905,17 +811,19 @@
                 font-size: 32px;
             }
             
-            .brand-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .contact-container {
-                grid-template-columns: 1fr;
+            .contact-info {
+                flex-direction: column;
+                gap: 20px;
             }
             
             .about-content {
-                grid-template-columns: 1fr;
+                flex-direction: column;
                 gap: 40px;
+            }
+            
+            .about-sidebar {
+                flex: 1;
+                width: 100%;
             }
             
             .nav-links {
@@ -937,6 +845,10 @@
             .banner-content p {
                 font-size: 18px;
             }
+            
+            .brand-info-grid {
+                grid-template-columns: 1fr;
+            }
         }
 
         /* Mobile Menu */
@@ -947,6 +859,53 @@
             font-size: 24px;
             cursor: pointer;
             color: var(--primary);
+        }
+        
+        /* Loading animation */
+        .preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: white;
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: opacity 0.5s ease;
+        }
+        
+        .preloader.loaded {
+            opacity: 0;
+            pointer-events: none;
+        }
+        
+        .wave-loader {
+            display: flex;
+            gap: 5px;
+        }
+        
+        .wave-loader span {
+            width: 4px;
+            height: 40px;
+            background: var(--primary);
+            animation: wave-load 1s ease-in-out infinite;
+        }
+        
+        .wave-loader span:nth-child(1) { animation-delay: 0s; }
+        .wave-loader span:nth-child(2) { animation-delay: 0.1s; }
+        .wave-loader span:nth-child(3) { animation-delay: 0.2s; }
+        .wave-loader span:nth-child(4) { animation-delay: 0.3s; }
+        .wave-loader span:nth-child(5) { animation-delay: 0.4s; }
+        
+        @keyframes wave-load {
+            0%, 100% {
+                transform: scaleY(1);
+            }
+            50% {
+                transform: scaleY(1.5);
+            }
         }
         
         @media (max-width: 768px) {
@@ -970,7 +929,7 @@
 </head>
 
 <body>
-    <header>
+    <header id="header">
         <div class="container">
             <nav>
                 <button class="mobile-menu-toggle" id="mobile-menu-toggle">
@@ -980,9 +939,7 @@
                         <line x1="3" y1="18" x2="21" y2="18"></line>
                     </svg>
                 </button>
-                <div class="logo">
-                    <span>Coastal<span class="accent">Connections</span></span>
-                </div>
+                <a href="#" class="logo">Coastal Connections</a>
                 <div class="nav-links">
                     <a href="#brands">Our Brands</a>
                     <a href="#how-we-work">Partnership</a>
@@ -999,21 +956,16 @@
         <div class="container">
             <div class="hero-content">
                 <div class="hero-text">
-                    <h1>Quality Brands. Independent Retailers. Trusted Partnerships.</h1>
-                    <p>For over 30 years, we've connected premium brands with independent retailers across the Northeast. From boutiques to surf shops, we believe in the power of authentic retail relationships.</p>
+                    <h1>Connecting Quality Brands with Leading Retailers for <span class="highlight-years">40 Years</span></h1>
+                    <p>Dean Schoonover has been the trusted link between premium surf and lifestyle brands and retailers throughout the Northeast, building partnerships that drive success.</p>
                     <div class="hero-buttons">
                         <a href="#brands" class="btn-primary">Explore Our Brands</a>
                         <a href="#contact" class="btn-secondary">Start a Conversation</a>
                     </div>
                 </div>
                 <div class="hero-image">
-                    <img src="/api/placeholder/550/400" alt="Quality Brand Partnership" />
+                    <img src="1bcdmib2eia01.png" alt="Dean Schoonover on the boardwalk" loading="eager" fetchpriority="high" />
                 </div>
-            </div>
-            
-            <div class="welcome-box">
-                <h3>Every Retailer Matters</h3>
-                <p>Whether you're just starting out or you've been in business for decades, if you're passionate about serving your customers with quality products, we want to work with you. Great businesses come in all sizes.</p>
             </div>
         </div>
     </section>
@@ -1021,208 +973,247 @@
     <section id="brands" class="brands">
         <div class="container">
             <div class="section-title fade-in">
-                <h2>Premium Brands That Perform</h2>
-                <p>We represent established brands with loyal followings and proven sales records. These aren't just products—they're brands customers actively seek out.</p>
+                <h2 data-animate="fadeUp">Brand Portfolio</h2>
+                <p data-animate="fadeUp">Internationally distributed brands with decades of proven success</p>
             </div>
             
-            <div class="brand-grid">
-                <div class="brand-card fade-in">
+            <!-- 
+            Logo files needed:
+            - follow: logo.jpg
+            - XCEL: xcel-logo.png
+            - Channel Islands: ci-logo.png
+            - Carver: 1.jpg
+            - Freestyle: freestyle-logo.png
+            - AVA: 1.png
+            -->
+            <div class="brands-container">
+                <div class="brand-card" onclick="toggleBrand(this)">
                     <div class="brand-header">
                         <div class="brand-logo">
-                            <img src="/api/placeholder/60/60" alt="AVVA Logo" />
+                            <img src="logo.jpg" alt="follow logo" />
+                            <div class="brand-tagline">Wildlife Conservation Bracelets & Plush</div>
                         </div>
-                        <div class="brand-info">
-                            <h3>AVVA</h3>
-                            <div class="brand-category">Premium Menswear</div>
-                        </div>
+                        <span class="expand-icon">↓</span>
                     </div>
-                    <p class="brand-description">Contemporary men's clothing that combines European design sensibility with American practicality. Quality construction and timeless style that customers return for season after season.</p>
-                    <div class="brand-details">
-                        <div class="brand-territory">
-                            <h4>Coverage Area</h4>
-                            <div class="territory-tags">
-                                <span class="territory-tag">MD</span>
-                                <span class="territory-tag">DE</span>
-                                <span class="territory-tag">NJ</span>
-                                <span class="territory-tag">NY</span>
-                                <span class="territory-tag">RI</span>
-                                <span class="territory-tag">NH</span>
-                                <span class="territory-tag">VT</span>
-                                <span class="territory-tag">MA</span>
-                                <span class="territory-tag">PA</span>
+                    <div class="brand-content">
+                        <div class="brand-details">
+                            <p style="margin-bottom: 20px;">Innovative bracelets and plush that connect customers with real animals while supporting wildlife conservation. Each purchase directly helps protect endangered species worldwide through partnerships with leading conservation organizations.</p>
+                            
+                            <div class="brand-info-grid">
+                                <div class="brand-info-section">
+                                    <h4>Perfect For:</h4>
+                                    <ul>
+                                        <li>Aquariums</li>
+                                        <li>Zoos</li>
+                                        <li>Museums</li>
+                                        <li>Nature Centers</li>
+                                        <li>Coastal Retailers</li>
+                                        <li>Gift Shops</li>
+                                        <li>Boutiques</li>
+                                    </ul>
+                                </div>
+                                <div class="brand-info-section">
+                                    <h4>Also Great For:</h4>
+                                    <ul>
+                                        <li>Gift Shops</li>
+                                        <li>Boutiques</li>
+                                        <li>Eco-Focused Retailers</li>
+                                        <li>Educational Stores</li>
+                                    </ul>
+                                </div>
                             </div>
-                        </div>
-                        <div class="target-retailers">
-                            <h4>Ideal For</h4>
-                            <div class="retailer-types">
-                                <span class="retailer-type">Men's Boutiques</span>
-                                <span class="retailer-type">Lifestyle Stores</span>
-                                <span class="retailer-type">Department Stores</span>
-                                <span class="retailer-type">Contemporary Shops</span>
+                            
+                            <div style="background: rgba(91,155,213,0.05); padding: 15px; border-radius: 8px;">
+                                <strong>Why It Works:</strong> Customers love the conservation connection and the interactive experience drives repeat purchases.
                             </div>
                         </div>
                     </div>
                 </div>
-                
-                <div class="brand-card fade-in">
+
+                <div class="brand-card" onclick="toggleBrand(this)">
                     <div class="brand-header">
                         <div class="brand-logo">
-                            <img src="/api/placeholder/60/60" alt="FAHLO Logo" />
+                            <img src="xcel-logo.png" alt="XCEL Wetsuits logo" />
+                            <div class="brand-tagline">Premium Performance & UV Protection</div>
                         </div>
-                        <div class="brand-info">
-                            <h3>FAHLO</h3>
-                            <div class="brand-category">Wildlife Conservation Tech</div>
-                        </div>
+                        <span class="expand-icon">↓</span>
                     </div>
-                    <p class="brand-description">Innovative bracelets that connect wearers with real wild animals through GPS tracking technology. Customers love the conservation connection, and the interactive experience drives repeat purchases.</p>
-                    <div class="brand-details">
-                        <div class="brand-territory">
-                            <h4>Coverage Area</h4>
-                            <div class="territory-tags">
-                                <span class="territory-tag">NY</span>
-                                <span class="territory-tag">NJ</span>
+                    <div class="brand-content">
+                        <div class="brand-details">
+                            <p style="margin-bottom: 20px;">Industry-leading wetsuits and UV protection apparel backed by innovation. From professional surfers to weekend warriors, XCEL delivers unmatched quality and performance. UV protection apparel perfect for anywhere sun protection matters.</p>
+                            
+                            <div class="brand-info-grid">
+                                <div class="brand-info-section">
+                                    <h4>Product Range:</h4>
+                                    <ul>
+                                        <li>Premium Wetsuits</li>
+                                        <li>UV Protection Apparel</li>
+                                        <li>Rash Guards</li>
+                                        <li>Board Shorts</li>
+                                        <li>Accessories</li>
+                                    </ul>
+                                </div>
+                                <div class="brand-info-section">
+                                    <h4>Ideal Locations:</h4>
+                                    <ul>
+                                        <li>Surf Shops</li>
+                                        <li>Board Sports Retailers</li>
+                                        <li>Beach Stores</li>
+                                        <li>Anywhere UV Protection Matters</li>
+                                    </ul>
+                                </div>
                             </div>
-                        </div>
-                        <div class="target-retailers">
-                            <h4>Ideal For</h4>
-                            <div class="retailer-types">
-                                <span class="retailer-type">Museum Shops</span>
-                                <span class="retailer-type">Zoo Stores</span>
-                                <span class="retailer-type">Aquariums</span>
-                                <span class="retailer-type">Nature Centers</span>
-                                <span class="retailer-type">Eco-Retailers</span>
+                            
+                            <div style="background: rgba(91,155,213,0.05); padding: 15px; border-radius: 8px;">
+                                <strong>Dean's Role:</strong> Nearly 40 years representing XCEL, contributing to sales, R&D, and marketing. Extensive team sponsorship throughout the Northeast.
                             </div>
                         </div>
                     </div>
                 </div>
-                
-                <div class="brand-card fade-in">
+
+                <div class="brand-card" onclick="toggleBrand(this)">
                     <div class="brand-header">
                         <div class="brand-logo">
-                            <img src="/api/placeholder/60/60" alt="Freestyle Watches Logo" />
+                            <img src="ci-logo.png" alt="Channel Islands Surfboards logo" />
+                            <div class="brand-tagline">Legendary Surfboard Craftsmanship</div>
                         </div>
-                        <div class="brand-info">
-                            <h3>Freestyle Watches</h3>
-                            <div class="brand-category">Action Sports Timepieces</div>
-                        </div>
+                        <span class="expand-icon">↓</span>
                     </div>
-                    <p class="brand-description">Durable, functional watches designed for surfers and action sports enthusiasts. Features like tide charts and water resistance make these essential gear for active lifestyles.</p>
-                    <div class="brand-details">
-                        <div class="brand-territory">
-                            <h4>Coverage Area</h4>
-                            <div class="territory-tags">
-                                <span class="territory-tag">NY</span>
-                                <span class="territory-tag">NJ</span>
-                                <span class="territory-tag">PA</span>
+                    <div class="brand-content">
+                        <div class="brand-details">
+                            <p style="margin-bottom: 20px;">The most iconic name in surfing. Channel Islands delivers world-class surfboards, accessories, and classic coastal apparel with unmatched brand recognition and heritage.</p>
+                            
+                            <div class="brand-info-grid">
+                                <div class="brand-info-section">
+                                    <h4>Product Categories:</h4>
+                                    <ul>
+                                        <li>Custom & Stock Surfboards</li>
+                                        <li>Surfing Accessories</li>
+                                        <li>Classic Coastal Apparel</li>
+                                        <li>Premium Merchandise</li>
+                                    </ul>
+                                </div>
+                                <div class="brand-info-section">
+                                    <h4>Distribution:</h4>
+                                    <ul>
+                                        <li>Surf Shops</li>
+                                        <li>Premium Boutiques</li>
+                                        <li>Select Board Shops</li>
+                                        <li>Most Exclusive Distribution</li>
+                                    </ul>
+                                </div>
                             </div>
-                        </div>
-                        <div class="target-retailers">
-                            <h4>Ideal For</h4>
-                            <div class="retailer-types">
-                                <span class="retailer-type">Surf Shops</span>
-                                <span class="retailer-type">Beach Stores</span>
-                                <span class="retailer-type">Outdoor Retailers</span>
-                                <span class="retailer-type">Action Sports</span>
+                            
+                            <div style="background: rgba(91,155,213,0.05); padding: 15px; border-radius: 8px;">
+                                <strong>Dean's Impact:</strong> 30+ years with CI, helped develop the Ave Joe model for East Coast conditions, extensive demo programs and team support.
                             </div>
                         </div>
                     </div>
                 </div>
-                
-                <div class="brand-card fade-in">
+
+                <div class="brand-card" onclick="toggleBrand(this)">
                     <div class="brand-header">
                         <div class="brand-logo">
-                            <img src="/api/placeholder/60/60" alt="XCEL Wetsuits Logo" />
+                            <img src="1.jpg" alt="Carver Skateboards logo" />
+                            <div class="brand-tagline">Surf-Inspired Skateboard Systems</div>
                         </div>
-                        <div class="brand-info">
-                            <h3>XCEL Wetsuits</h3>
-                            <div class="brand-category">Performance Water Gear</div>
-                        </div>
+                        <span class="expand-icon">↓</span>
                     </div>
-                    <p class="brand-description">High-performance wetsuits and water sports accessories engineered for comfort and durability. Trusted by professionals and enthusiasts for superior thermal protection.</p>
-                    <div class="brand-details">
-                        <div class="brand-territory">
-                            <h4>Coverage Area</h4>
-                            <div class="territory-tags">
-                                <span class="territory-tag">NY</span>
-                                <span class="territory-tag">NJ</span>
-                                <span class="territory-tag">PA</span>
-                                <span class="territory-tag">MD</span>
-                                <span class="territory-tag">DE</span>
-                            </div>
-                        </div>
-                        <div class="target-retailers">
-                            <h4>Ideal For</h4>
-                            <div class="retailer-types">
-                                <span class="retailer-type">Surf Shops</span>
-                                <span class="retailer-type">Dive Shops</span>
-                                <span class="retailer-type">Water Sports</span>
-                                <span class="retailer-type">Marine Stores</span>
+                    <div class="brand-content">
+                        <div class="brand-details">
+                            <p style="margin-bottom: 20px;">The original surf-skate innovator. Carver's revolutionary truck systems bring the feeling of surfing to the street, perfect for surf training and pure skateboarding enjoyment.</p>
+                            
+                            <div class="brand-info-grid">
+                                <div class="brand-info-section">
+                                    <h4>Products:</h4>
+                                    <ul>
+                                        <li>Complete Skateboards</li>
+                                        <li>Truck Systems</li>
+                                        <li>Accessories</li>
+                                        <li>Apparel</li>
+                                    </ul>
+                                </div>
+                                <div class="brand-info-section">
+                                    <h4>Target Retailers:</h4>
+                                    <ul>
+                                        <li>Skate Shops</li>
+                                        <li>Surf Shops</li>
+                                        <li>Board Sports Stores</li>
+                                        <li>Active Lifestyle Retailers</li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                
-                <div class="brand-card fade-in">
+
+                <div class="brand-card" onclick="toggleBrand(this)">
                     <div class="brand-header">
                         <div class="brand-logo">
-                            <img src="/api/placeholder/60/60" alt="Channel Island Surfboards Logo" />
+                            <img src="freestyle-logo.png" alt="Freestyle Watches logo" />
+                            <div class="brand-tagline">Shark-Proof Watches Since 1981</div>
                         </div>
-                        <div class="brand-info">
-                            <h3>Channel Island Surfboards</h3>
-                            <div class="brand-category">World-Class Surfboards</div>
-                        </div>
+                        <span class="expand-icon">↓</span>
                     </div>
-                    <p class="brand-description">Legendary surfboard craftsmanship from Santa Barbara. Ridden by world champions and respected by surfers everywhere for innovation and performance.</p>
-                    <div class="brand-details">
-                        <div class="brand-territory">
-                            <h4>Coverage Area</h4>
-                            <div class="territory-tags">
-                                <span class="territory-tag">NY</span>
-                                <span class="territory-tag">NJ</span>
-                                <span class="territory-tag">MD</span>
-                                <span class="territory-tag">DE</span>
-                            </div>
-                        </div>
-                        <div class="target-retailers">
-                            <h4>Ideal For</h4>
-                            <div class="retailer-types">
-                                <span class="retailer-type">Core Surf Shops</span>
-                                <span class="retailer-type">Board Shops</span>
-                                <span class="retailer-type">Premium Surf</span>
-                                <span class="retailer-type">Coastal Retailers</span>
+                    <div class="brand-content">
+                        <div class="brand-details">
+                            <p style="margin-bottom: 20px;">Water-resistant timepieces designed for ocean athletes and tested in the world's most challenging conditions. Proven durability meets surf-inspired style.</p>
+                            
+                            <div class="brand-info-grid">
+                                <div class="brand-info-section">
+                                    <h4>Key Features:</h4>
+                                    <ul>
+                                        <li>100M+ Water Resistance</li>
+                                        <li>Tide Functions</li>
+                                        <li>Durable Construction</li>
+                                        <li>Surf-Tested Design</li>
+                                    </ul>
+                                </div>
+                                <div class="brand-info-section">
+                                    <h4>Retail Fit:</h4>
+                                    <ul>
+                                        <li>Surf Shops</li>
+                                        <li>Watch Retailers</li>
+                                        <li>Action Sports Stores</li>
+                                        <li>Lifestyle Boutiques</li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                
-                <div class="brand-card fade-in">
+
+                <div class="brand-card" onclick="toggleBrand(this)">
                     <div class="brand-header">
                         <div class="brand-logo">
-                            <img src="/api/placeholder/60/60" alt="Carver Skateboards Logo" />
+                            <img src="1.png" alt="AVA logo" />
+                            <div class="brand-tagline">Born in Hawaii, Raised in California</div>
                         </div>
-                        <div class="brand-info">
-                            <h3>Carver Skateboards</h3>
-                            <div class="brand-category">Surf-Inspired Skateboards</div>
-                        </div>
+                        <span class="expand-icon">↓</span>
                     </div>
-                    <p class="brand-description">Revolutionary surf-inspired skateboard systems that bring the fluid feeling of surfing to the streets with innovative truck technology and premium construction.</p>
-                    <div class="brand-details">
-                        <div class="brand-territory">
-                            <h4>Coverage Area</h4>
-                            <div class="territory-tags">
-                                <span class="territory-tag">NY</span>
-                                <span class="territory-tag">NJ</span>
-                                <span class="territory-tag">MD</span>
-                                <span class="territory-tag">DE</span>
-                            </div>
-                        </div>
-                        <div class="target-retailers">
-                            <h4>Ideal For</h4>
-                            <div class="retailer-types">
-                                <span class="retailer-type">Skate Shops</span>
-                                <span class="retailer-type">Surf Shops</span>
-                                <span class="retailer-type">Action Sports</span>
-                                <span class="retailer-type">Board Sports</span>
+                    <div class="brand-content">
+                        <div class="brand-details">
+                            <p style="margin-bottom: 20px;">Surf heritage meets California street style. Premium streetwear that blends authentic surf culture with contemporary design, creating a unique aesthetic that resonates with style-conscious consumers.</p>
+                            
+                            <div class="brand-info-grid">
+                                <div class="brand-info-section">
+                                    <h4>Product Lines:</h4>
+                                    <ul>
+                                        <li>Premium Apparel</li>
+                                        <li>Streetwear Essentials</li>
+                                        <li>Accessories</li>
+                                        <li>Limited Editions</li>
+                                    </ul>
+                                </div>
+                                <div class="brand-info-section">
+                                    <h4>Ideal For:</h4>
+                                    <ul>
+                                        <li>Fashion Boutiques</li>
+                                        <li>Streetwear Shops</li>
+                                        <li>Premium Retailers</li>
+                                        <li>Lifestyle Stores</li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -1235,7 +1226,7 @@
         <div class="container">
             <div class="section-title fade-in">
                 <h2>How Our Partnership Works</h2>
-                <p>Straightforward business relationships built on mutual success and respect for independent retail.</p>
+                <p>Straightforward business relationships built on mutual success and respect for quality retail.</p>
             </div>
             
             <div class="model-cards">
@@ -1248,8 +1239,8 @@
                             <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
                         </svg>
                     </div>
-                    <h3 class="model-title">Independent Retailer Focus</h3>
-                    <p class="model-description">We exclusively partner with independent retailers who understand their customers and communities. No big box competition—just authentic retail partnerships.</p>
+                    <h3 class="model-title">Quality Retailer Focus</h3>
+                    <p class="model-description">We partner with retailers who understand their customers and communities. From boutiques to established stores, we work with retailers committed to quality and service.</p>
                 </div>
                 
                 <div class="model-card fade-in">
@@ -1259,8 +1250,8 @@
                             <circle cx="12" cy="10" r="3"></circle>
                         </svg>
                     </div>
-                    <h3 class="model-title">Protected Territory Rights</h3>
-                    <p class="model-description">When you partner with us, you receive exclusive territorial protection. Your investment in our brands is protected from local competition.</p>
+                    <h3 class="model-title">Strategic Distribution</h3>
+                    <p class="model-description">Each brand has its own distribution strategy designed to support retailer success. We work together to ensure the right product mix for your market.</p>
                 </div>
                 
                 <div class="model-card fade-in">
@@ -1270,7 +1261,7 @@
                         </svg>
                     </div>
                     <h3 class="model-title">Personal Service & Support</h3>
-                    <p class="model-description">Direct access to experienced sales professionals who understand your business. Real conversations, quick responses, and solutions that work.</p>
+                    <p class="model-description">Direct access to Dean, backed by full corporate support. Real conversations, quick responses, and solutions that work for your business.</p>
                 </div>
             </div>
         </div>
@@ -1279,58 +1270,49 @@
     <section id="services" class="services">
         <div class="container">
             <div class="section-title fade-in">
-                <h2>Complete Business Support</h2>
-                <p>We go beyond simple distribution to provide comprehensive support that helps your retail business thrive.</p>
+                <h2>Complete Sales Support</h2>
+                <p>Dean is your dedicated point of contact, backed by full corporate support</p>
             </div>
             
-            <div class="services-grid">
-                <div class="service-card fade-in">
-                    <div class="service-icon">
-                        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
-                            <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
-                        </svg>
+            <div class="services-list">
+                <div class="service-item fade-in">
+                    <h3>Smart Inventory Planning</h3>
+                    <p class="service-description">Data-driven recommendations based on your location, customer base, and sales history. We help you maximize ROI while minimizing risk.</p>
+                    <div class="service-details">
+                        <strong>Includes:</strong> Seasonal planning, size runs, reorder strategies, and new product introductions tailored to your specific market.
                     </div>
-                    <h3 class="service-title">Smart Inventory Planning</h3>
-                    <p class="service-description">Strategic inventory management with flexible ordering and delivery schedules to optimize your cash flow and retail space efficiency.</p>
                 </div>
-                
-                <div class="service-card fade-in">
-                    <div class="service-icon">
-                        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-                            <polyline points="14 2 14 8 20 8"></polyline>
-                            <line x1="16" y1="13" x2="8" y2="13"></line>
-                            <line x1="16" y1="17" x2="8" y2="17"></line>
-                        </svg>
+
+                <div class="service-item fade-in">
+                    <h3>Comprehensive Training Programs</h3>
+                    <p class="service-description">Empower your staff with deep product knowledge and effective selling techniques. Confident staff sell more.</p>
+                    <div class="service-details">
+                        <strong>Training covers:</strong> Product features, technical specifications, brand stories, and conversion techniques to maximize sales opportunities.
                     </div>
-                    <h3 class="service-title">Product Training & Education</h3>
-                    <p class="service-description">Comprehensive training programs for you and your staff on product features, benefits, and effective selling techniques to maximize conversion rates.</p>
                 </div>
-                
-                <div class="service-card fade-in">
-                    <div class="service-icon">
-                        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
-                            <line x1="3" y1="9" x2="21" y2="9"></line>
-                            <line x1="9" y1="21" x2="9" y2="9"></line>
-                        </svg>
+
+                <div class="service-item fade-in">
+                    <h3>Visual Merchandising Support</h3>
+                    <p class="service-description">Create compelling displays that stop customers and drive purchases. From window displays to in-store presentation.</p>
+                    <div class="service-details">
+                        <strong>Support includes:</strong> Display strategies, signage coordination, seasonal updates, and best practices from top-performing retailers.
                     </div>
-                    <h3 class="service-title">Visual Merchandising Support</h3>
-                    <p class="service-description">Professional merchandising guidance and display setup assistance to create compelling presentations that showcase products effectively.</p>
                 </div>
-                
-                <div class="service-card fade-in">
-                    <div class="service-icon">
-                        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <circle cx="12" cy="12" r="10"></circle>
-                            <path d="M8 14s1.5 2 4 2 4-2 4-2"></path>
-                            <line x1="9" y1="9" x2="9.01" y2="9"></line>
-                            <line x1="15" y1="9" x2="15.01" y2="9"></line>
-                        </svg>
+
+                <div class="service-item fade-in">
+                    <h3>Digital Marketing Assets</h3>
+                    <p class="service-description">Access to professional content, imagery, and promotional materials to amplify your online presence and drive traffic.</p>
+                    <div class="service-details">
+                        <strong>Resources:</strong> Product photos, social media content, email templates, and coordinated promotional campaigns.
                     </div>
-                    <h3 class="service-title">Marketing & Promotional Support</h3>
-                    <p class="service-description">Co-op advertising opportunities, digital marketing assets, and promotional materials to help amplify your brand presence and drive sales.</p>
+                </div>
+
+                <div class="service-item fade-in">
+                    <h3>Corporate Liaison Services</h3>
+                    <p class="service-description">Direct access to brand teams for special requests, custom orders, and marketing support. Dean manages the complexity so you don't have to.</p>
+                    <div class="service-details">
+                        <strong>Dean's role:</strong> Facilitates communication, expedites requests, and ensures you get the support you need when you need it.
+                    </div>
                 </div>
             </div>
         </div>
@@ -1339,73 +1321,55 @@
     <section id="about" class="about">
         <div class="container">
             <div class="section-title fade-in">
-                <h2>Meet Dean Schoonover</h2>
-                <p>Three decades of industry experience and authentic relationships built on trust and mutual success.</p>
+                <h2>About Dean Schoonover</h2>
+                <p>Four decades of building relationships and driving success</p>
             </div>
             
             <div class="about-content">
-                <div class="about-image fade-in">
-                    <img src="/api/placeholder/450/350" alt="Dean Schoonover - Industry Veteran" />
-                </div>
                 <div class="about-text fade-in">
-                    <h3>Industry Leadership & Experience</h3>
-                    <p>Dean founded Coastal Connections with a simple philosophy: great relationships create great business. With over 30 years in the action sports and retail industry, Dean understands both the challenges retailers face and what brands need to succeed.</p>
-                    <p>This deep industry knowledge allows us to create partnerships that work for everyone. We know which products perform in different markets, understand seasonal trends, and can help you make informed decisions about inventory and merchandising.</p>
-                    <p>Our approach combines old-school relationship building with modern business practices. We believe in personal service, honest communication, and building partnerships that last for years.</p>
+                    <p><strong>With nearly 40 years in the industry</strong>, Dean Schoonover's influence in surf culture spans from Sandy Hook to Cape May and beyond. Dean has built an unmatched network of relationships with retailers and brands alike.</p>
                     
-                    <div class="about-highlight">
-                        <h4>🏆 Hall of Fame Recognition 2025</h4>
-                        <p>Dean's significant contributions to the action sports industry will be recognized with his induction into the Action Sports Industry Hall of Fame in 2025—a testament to decades of dedicated service to retailers and brands.</p>
+                    <p>Starting with Xcel Wetsuits on the North Shore of Hawaii, Dean has grown to represent some of the most prestigious brands in surf and lifestyle. His approach combines intimate product knowledge, strategic thinking, and the ability to connect the right brands with the right retailers.</p>
+                    
+                    <p>Dean's contributions extend beyond sales - he co-designed the Brave New World logo, helped develop Channel Islands' Ave Joe surfboard model for East Coast conditions, and has sponsored countless surfers throughout his career.</p>
+                    
+                    <div class="testimonial">
+                        <p>"Dean Schoonover has been integral in our success by representing and informing our board designs through the years. His surfing ability and admirable disposition have been an invaluable asset to both CI and NJ surf culture."</p>
+                        <div class="testimonial-author">- Britt Merrick, Channel Islands Surfboards</div>
                     </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="testimonials">
-        <div class="container">
-            <div class="section-title fade-in">
-                <h2>Retailer Success Stories</h2>
-                <p>Hear directly from our retail partners about their experience working with Coastal Connections.</p>
-            </div>
-            
-            <div class="testimonials-grid">
-                <div class="testimonial-card fade-in">
-                    <p class="testimonial-text">"Working with Coastal Connections has been a game-changer for our menswear section. The AVVA line performs consistently well, and Dean's team provides the kind of support that's rare in this business. They understand retail and genuinely want us to succeed."</p>
-                    <div class="testimonial-author">
-                        <div class="author-image">
-                            <img src="/api/placeholder/60/60" alt="Michael Reynolds" />
-                        </div>
-                        <div class="author-info">
-                            <h4>Michael Reynolds</h4>
-                            <p>Owner, Atlantic Style Boutique</p>
-                        </div>
+                    
+                    <div class="testimonial">
+                        <p>"From the very start Dean impressed me with his work ethic, passion for surfing, products and his surfing skills. Over the years he continues to represent XCEL at its highest level and contributes to Xcel's success and surfing's success in N.J."</p>
+                        <div class="testimonial-author">- Ed D'Ascoli, XCEL Founder</div>
                     </div>
+                    
+                    <div class="testimonial">
+                        <p>"Dean has had an accomplished career as a Competitive Surfer as well as helping to support the surfing community and industry. He managed to maximize his surfing experiences as well as managing to make a living in Surfing."</p>
+                        <div class="testimonial-author">- Don Tarrant</div>
+                    </div>
+                    
+                    <p style="margin-top: 30px;"><strong>Dean is your point of contact</strong> and has years of intimate knowledge of how each brand works and the individuals to go to to get the job done quickly and efficiently. With full corporate support behind him including customer service reps and credit department reps, Dean ensures smooth operations and successful partnerships.</p>
                 </div>
                 
-                <div class="testimonial-card fade-in">
-                    <p class="testimonial-text">"The FAHLO wildlife tracking bracelets have been perfect for our conservation mission. Our visitors love the technology and the connection to real animals. Dean understood our unique needs from day one and provided exactly the right product mix."</p>
-                    <div class="testimonial-author">
-                        <div class="author-image">
-                            <img src="/api/placeholder/60/60" alt="Sarah Johnson" />
-                        </div>
-                        <div class="author-info">
-                            <h4>Dr. Sarah Johnson</h4>
-                            <p>Director, Coastal Nature Center</p>
-                        </div>
+                <div class="about-sidebar fade-in">
+                    <div class="achievement-card">
+                        <h4>New Jersey Surfing Hall of Fame</h4>
+                        <p>Inductee - June 2025<br>Secretary since 2023<br>Recognized surfer and industry leader</p>
                     </div>
-                </div>
-                
-                <div class="testimonial-card fade-in">
-                    <p class="testimonial-text">"Dean's been our partner for years with Channel Island boards and Carver skates. These brands have serious credibility with our core customers. When surfers see CI boards in our shop, they know we're legit. That authenticity is priceless."</p>
-                    <div class="testimonial-author">
-                        <div class="author-image">
-                            <img src="/api/placeholder/60/60" alt="Jason Torres" />
-                        </div>
-                        <div class="author-info">
-                            <h4>Jason Torres</h4>
-                            <p>Manager, East Coast Board Co.</p>
-                        </div>
+                    
+                    <div class="achievement-card">
+                        <h4>Community Leadership</h4>
+                        <p>9 years Board of Education<br>7 years as President<br>Respected community member</p>
+                    </div>
+                    
+                    <div class="achievement-card">
+                        <h4>40 Years Industry Experience</h4>
+                        <p>Building lasting partnerships<br>Representing top brands<br>Supporting retailers throughout the Northeast</p>
+                    </div>
+                    
+                    <div class="achievement-card">
+                        <h4>Industry Contributions</h4>
+                        <p>Co-designed Brave New World logo<br>Helped develop CI Ave Joe model<br>Sponsored numerous surfers</p>
                     </div>
                 </div>
             </div>
@@ -1416,14 +1380,14 @@
         <div class="container">
             <div class="banner-content fade-in">
                 <h2>Ready to Build a Partnership?</h2>
-                <p>Whether you're interested in specific brands or just want to explore opportunities, we'd love to start a conversation about how we can work together.</p>
+                <p>Whether you're interested in specific brands or want to explore opportunities, let's start a conversation about how we can work together.</p>
                 <div class="banner-buttons">
                     <a href="#contact" class="btn-primary">Contact Us Today</a>
-                    <a href="tel:732-778-3326" class="btn-secondary" style="display: flex; align-items: center; text-decoration: none;">
+                    <a href="tel:732-272-1234" class="btn-secondary" style="display: flex; align-items: center; text-decoration: none;">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right: 10px;">
                             <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
                         </svg>
-                        Call: (732) 778-3326
+                        Call: (732) 272-1234
                     </a>
                 </div>
             </div>
@@ -1434,103 +1398,39 @@
         <div class="container">
             <div class="section-title fade-in">
                 <h2>Let's Start the Conversation</h2>
-                <p>Ready to explore partnership opportunities? We're here to answer questions and discuss how we can work together.</p>
+                <p>Ready to bring these exceptional brands to your store? We're here to help.</p>
             </div>
             
-            <div class="contact-container">
+            <div class="contact-content">
+                <p style="font-size: 18px; margin-bottom: 40px;">Whether you're an established retailer looking to refresh your inventory or a new shop seeking proven brands, Dean has the experience and relationships to help you succeed.</p>
+                
                 <div class="contact-info">
-                    <h3>Contact Information</h3>
-                    
                     <div class="contact-item">
-                        <div class="contact-icon">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
-                            </svg>
-                        </div>
-                        <div class="contact-text">
-                            <h4>Phone</h4>
-                            <p>(732) 778-3326</p>
-                            <p>Direct line - we prefer conversations over emails</p>
-                        </div>
+                        <strong>Email:</strong> <a href="mailto:dean@coastalconnections.info">dean@coastalconnections.info</a>
                     </div>
-                    
                     <div class="contact-item">
-                        <div class="contact-icon">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-                                <polyline points="22,6 12,13 2,6"></polyline>
-                            </svg>
-                        </div>
-                        <div class="contact-text">
-                            <h4>Email</h4>
-                            <p>deanosales@aol.com</p>
-                            <p>We respond to all inquiries promptly</p>
-                        </div>
-                    </div>
-                    
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-                                <circle cx="12" cy="10" r="3"></circle>
-                            </svg>
-                        </div>
-                        <div class="contact-text">
-                            <h4>Service Territory</h4>
-                            <p>Northeast & Mid-Atlantic States</p>
-                            <p>MD, DE, NJ, NY, RI, NH, VT, MA, PA</p>
-                        </div>
+                        <strong>Phone:</strong> <a href="tel:732-272-1234">(732) 272-1234</a>
                     </div>
                 </div>
                 
-                <div class="contact-form">
-                    <h3>Partnership Inquiry</h3>
-                    <form id="partnership-form">
-                        <div class="form-group">
-                            <label for="name">Your Name</label>
-                            <input type="text" id="name" name="name" required placeholder="Enter your full name">
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="email">Email Address</label>
-                            <input type="email" id="email" name="email" required placeholder="your@email.com">
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="phone">Phone Number</label>
-                            <input type="tel" id="phone" name="phone" placeholder="(000) 000-0000">
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="business">Store Name</label>
-                            <input type="text" id="business" name="business" required placeholder="Your store or business name">
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="location">Store Location</label>
-                            <input type="text" id="location" name="location" required placeholder="City, State">
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="brands">Brands of Interest</label>
-                            <select id="brands" name="brands" multiple style="height: 120px;">
-                                <option value="avva">AVVA Premium Menswear</option>
-                                <option value="fahlo">FAHLO Wildlife Trackers</option>
-                                <option value="freestyle">Freestyle Watches</option>
-                                <option value="xcel">XCEL Wetsuits</option>
-                                <option value="channel">Channel Island Surfboards</option>
-                                <option value="carver">Carver Skateboards</option>
-                                <option value="all">All Brands</option>
-                                <option value="questions">General Inquiry</option>
-                            </select>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="message">Tell Us About Your Business</label>
-                            <textarea id="message" name="message" placeholder="What type of store do you operate? Who are your customers? What questions can we answer for you?"></textarea>
-                        </div>
-                        
-                        <button type="submit" class="form-submit">Submit Partnership Inquiry</button>
+                <div style="margin-top: 50px;">
+                    <h3 style="color: var(--white); margin-bottom: 30px; font-size: 28px;">Send a Quick Message</h3>
+                    <form id="contact-form">
+                        <input type="text" name="name" placeholder="Your Name" required>
+                        <input type="email" name="email" placeholder="Email Address" required>
+                        <input type="text" name="business" placeholder="Business Name">
+                        <select name="interest">
+                            <option value="">I'm interested in...</option>
+                            <option value="all">All Brands</option>
+                            <option value="follow">follow - Wildlife Conservation</option>
+                            <option value="xcel">XCEL Wetsuits</option>
+                            <option value="ci">Channel Islands Surfboards</option>
+                            <option value="carver">Carver Skateboards</option>
+                            <option value="freestyle">Freestyle Watches</option>
+                            <option value="ava">AVA - California Street Style</option>
+                        </select>
+                        <textarea name="message" placeholder="Tell us about your store and what you're looking for..." style="min-height: 120px;"></textarea>
+                        <button type="submit" class="cta-button" style="width: 100%; padding: 16px; font-size: 18px; background: var(--white); color: var(--primary); margin-top: 10px;">Send Message</button>
                     </form>
                 </div>
             </div>
@@ -1541,18 +1441,18 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-column">
-                    <h4>Coastal<span style="color: var(--accent);">Connections</span></h4>
-                    <p>Connecting premium brands with independent retailers across the Northeast. Building authentic partnerships that drive mutual success for over three decades.</p>
+                    <h4>Coastal Connections</h4>
+                    <p>Connecting premium brands with leading retailers across the Northeast. Building authentic partnerships that drive mutual success for over four decades.</p>
                 </div>
                 
                 <div class="footer-column">
                     <h4>Our Premium Brands</h4>
-                    <a href="#brands">AVVA Premium Menswear</a>
-                    <a href="#brands">FAHLO Wildlife Trackers</a>
-                    <a href="#brands">Freestyle Watches</a>
+                    <a href="#brands">follow - Wildlife Conservation</a>
                     <a href="#brands">XCEL Wetsuits</a>
-                    <a href="#brands">Channel Island Surfboards</a>
+                    <a href="#brands">Channel Islands Surfboards</a>
                     <a href="#brands">Carver Skateboards</a>
+                    <a href="#brands">Freestyle Watches</a>
+                    <a href="#brands">AVA - California Street Style</a>
                 </div>
                 
                 <div class="footer-column">
@@ -1561,26 +1461,36 @@
                     <a href="#services">Staff Training</a>
                     <a href="#services">Merchandising Support</a>
                     <a href="#services">Marketing Materials</a>
-                    <a href="#how-we-work">Territory Protection</a>
+                    <a href="#services">Corporate Liaison</a>
                 </div>
                 
                 <div class="footer-column">
                     <h4>Contact Information</h4>
-                    <p>Dean Schoonover, Founder</p>
-                    <p>Phone: (732) 778-3326</p>
-                    <p>Email: deanosales@aol.com</p>
-                    <p>Serving the Northeast & Mid-Atlantic</p>
+                    <p>Dean Schoonover</p>
+                    <p>Phone: (732) 272-1234</p>
+                    <p>Email: dean@coastalconnections.info</p>
+                    <p>Serving NY, NJ, PA, MD, DE, and beyond</p>
                 </div>
             </div>
             
             <div class="copyright">
-                <p>© 2025 Coastal Connections Corp. All rights reserved. | Hall of Fame Inductee 2025</p>
+                <p>© 2025 Coastal Connections. All rights reserved. | NJ Surfing Hall of Fame Inductee 2025</p>
             </div>
         </div>
     </footer>
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
+            // Header scroll effect
+            window.addEventListener('scroll', function() {
+                const header = document.getElementById('header');
+                if (window.scrollY > 50) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+            });
+            
             // Scroll reveal animation
             function revealOnScroll() {
                 const reveals = document.querySelectorAll('.fade-in');
@@ -1613,25 +1523,31 @@
             });
             
             // Form submission
-            const form = document.getElementById('partnership-form');
+            const form = document.getElementById('contact-form');
             if (form) {
                 form.addEventListener('submit', function(e) {
                     e.preventDefault();
                     
-                    // Create success message
-                    const successMessage = document.createElement('div');
-                    successMessage.innerHTML = `
-                        <div style="text-align: center; padding: 40px 20px; color: var(--white);">
-                            <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" style="margin: 0 auto 20px; display: block;">
-                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
-                                <polyline points="22 4 12 14.01 9 11.01"></polyline>
-                            </svg>
-                            <h3 style="margin-bottom: 15px; color: var(--white); font-size: 28px;">Thank You for Your Interest!</h3>
-                            <p style="font-size: 18px; line-height: 1.6; opacity: 0.9;">We've received your partnership inquiry and will be in touch within 1-2 business days to discuss next steps. Looking forward to exploring how we can work together.</p>
-                        </div>
-                    `;
+                    const formData = new FormData(this);
+                    const data = Object.fromEntries(formData);
                     
-                    form.parentNode.replaceChild(successMessage, form);
+                    // Create mailto link
+                    const subject = encodeURIComponent(`New Inquiry from ${data.name} - ${data.business || 'Retailer'}`);
+                    const body = encodeURIComponent(
+                        `Name: ${data.name}\n` +
+                        `Email: ${data.email}\n` +
+                        `Business: ${data.business || 'Not specified'}\n` +
+                        `Interested in: ${data.interest || 'Not specified'}\n\n` +
+                        `Message:\n${data.message}`
+                    );
+                    
+                    window.location.href = `mailto:dean@coastalconnections.info?subject=${subject}&body=${body}`;
+                    
+                    // Show success message
+                    alert('Thank you for your interest! Your message has been prepared. Please send the email to complete your inquiry.');
+                    
+                    // Reset form
+                    this.reset();
                 });
             }
             
@@ -1647,6 +1563,32 @@
                 });
             }
         });
+
+        // Toggle brand cards
+        function toggleBrand(element) {
+            const content = element.querySelector('.brand-content');
+            const icon = element.querySelector('.expand-icon');
+            
+            const isExpanded = content.classList.contains('expanded');
+            
+            // Close all other brands
+            document.querySelectorAll('.brand-content').forEach(c => {
+                c.classList.remove('expanded');
+            });
+            document.querySelectorAll('.expand-icon').forEach(i => {
+                i.classList.remove('rotated');
+            });
+            document.querySelectorAll('.brand-card').forEach(c => {
+                c.classList.remove('expanded');
+            });
+            
+            // Toggle current brand
+            if (!isExpanded) {
+                content.classList.add('expanded');
+                icon.classList.add('rotated');
+                element.classList.add('expanded');
+            }
+        }
     </script>
 </body>
 </html>
