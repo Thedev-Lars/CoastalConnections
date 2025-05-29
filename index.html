@@ -2268,27 +2268,6 @@
                 <p class="office-hours">Office Hours: Monday-Friday, 9:00 AM - 5:00 PM EST<br>
                 <em>Dean maintains flexibility for retail partners who operate beyond traditional business hours.</em></p>
                 
-                <form id="contact-form">
-                    <h3 style="color: var(--white); margin-bottom: 30px; font-size: 24px;">Send a Message</h3>
-                    <input type="text" name="name" placeholder="Your Name" required>
-                    <input type="email" name="email" placeholder="Email Address" required>
-                    <input type="text" name="business" placeholder="Store Name">
-                    <input type="text" name="location" placeholder="Store Location">
-                    <select name="interest">
-                        <option value="">Brand Interest</option>
-                        <option value="all">All Brands</option>
-                        <option value="fahlo">fahlo - Wildlife Tracking</option>
-                        <option value="xcel">XCEL Wetsuits</option>
-                        <option value="ci">Channel Islands Surfboards</option>
-                        <option value="carver">Carver Skateboards</option>
-                        <option value="freestyle">Freestyle Watches</option>
-                        <option value="ava">AVA Streetwear</option>
-                        <option value="multiple">Multiple Brands</option>
-                    </select>
-                    <textarea name="message" placeholder="Tell us about your retail business..." style="min-height: 120px;"></textarea>
-                    <button type="submit" class="cta-button" style="width: 100%; padding: 18px; font-size: 18px; background: var(--white); color: var(--primary); margin-top: 10px; border-radius: 10px;">Send Message</button>
-                </form>
-                
                 <div style="margin-top: 50px; text-align: center;">
                     <p style="color: var(--white); opacity: 0.9;">Based in New Jersey, serving retailers throughout the Northeast and beyond.</p>
                 </div>
@@ -2445,47 +2424,7 @@
                 });
             });
             
-            // Enhanced form submission with loading state
-            const form = document.getElementById('contact-form');
-            if (form) {
-                form.addEventListener('submit', function(e) {
-                    e.preventDefault();
-                    
-                    // Add loading state
-                    const submitButton = this.querySelector('button[type="submit"]');
-                    const originalText = submitButton.textContent;
-                    submitButton.textContent = 'Sending...';
-                    submitButton.classList.add('loading');
-                    
-                    const formData = new FormData(this);
-                    const data = Object.fromEntries(formData);
-                    
-                    // Create mailto link
-                    const subject = encodeURIComponent(`Partnership Inquiry from ${data.name} - ${data.business || 'Retailer'}`);
-                    const body = encodeURIComponent(
-                        `Name: ${data.name}\n` +
-                        `Email: ${data.email}\n` +
-                        `Store: ${data.business || 'Not specified'}\n` +
-                        `Location: ${data.location || 'Not specified'}\n` +
-                        `Brand Interest: ${data.interest || 'Not specified'}\n\n` +
-                        `Message:\n${data.message}`
-                    );
-                    
-                    // Simulate processing time
-                    setTimeout(() => {
-                        window.location.href = `mailto:dean@coastalconnections.info?subject=${subject}&body=${body}`;
-                        
-                        // Reset form
-                        submitButton.textContent = 'Message Prepared!';
-                        submitButton.classList.remove('loading');
-                        
-                        setTimeout(() => {
-                            submitButton.textContent = originalText;
-                            this.reset();
-                        }, 2000);
-                    }, 500);
-                });
-            }
+         
             
             // Initialize scroll reveal
             revealOnScroll();
