@@ -1254,21 +1254,44 @@
             z-index: 101;
         }
         
+        @media (min-width: 769px) {
+            .mobile-nav-overlay,
+            .mobile-nav {
+                display: none !important;
+                visibility: hidden !important;
+                pointer-events: none !important;
+            }
+            
+            .mobile-menu-toggle {
+                display: none !important;
+            }
+        }
+        
         .mobile-nav-overlay {
             display: none;
+            visibility: hidden;
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100vh;
             background: rgba(0,0,0,0.7);
-            z-index: 99;
+            z-index: 998;
             opacity: 0;
-            transition: opacity 0.3s ease;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+            pointer-events: none;
+        }
+        
+        @media (max-width: 768px) {
+            .mobile-nav-overlay {
+                display: block;
+            }
         }
         
         .mobile-nav-overlay.active {
+            visibility: visible;
             opacity: 1;
+            pointer-events: auto;
         }
         
         .mobile-nav {
@@ -1279,13 +1302,15 @@
             height: 100vh;
             background: var(--white);
             padding: 80px 30px 30px;
-            z-index: 100;
+            z-index: 999;
             transition: right 0.3s ease;
             box-shadow: -5px 0 20px rgba(0,0,0,0.1);
+            visibility: hidden;
         }
         
         .mobile-nav.active {
             right: 0;
+            visibility: visible;
         }
         
         .mobile-nav a {
@@ -1336,10 +1361,6 @@
 
         @media (max-width: 768px) {
             .mobile-menu-toggle {
-                display: block;
-            }
-            
-            .mobile-nav-overlay {
                 display: block;
             }
             
@@ -2326,23 +2347,54 @@
             const mobileOverlay = document.getElementById('mobile-nav-overlay');
             const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
             
-            function toggleMobileMenu() {
-                mobileNav.classList.toggle('active');
-                mobileOverlay.classList.toggle('active');
-                document.body.style.overflow = mobileNav.classList.contains('active') ? 'hidden' : '';
+            function closeMobileMenu() {
+                if (mobileNav) mobileNav.classList.remove('active');
+                if (mobileOverlay) mobileOverlay.classList.remove('active');
+                document.body.style.overflow = '';
             }
             
-            mobileToggle.addEventListener('click', toggleMobileMenu);
-            mobileOverlay.addEventListener('click', toggleMobileMenu);
+            function openMobileMenu() {
+                if (mobileNav) mobileNav.classList.add('active');
+                if (mobileOverlay) mobileOverlay.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
             
-            // Close mobile menu when clicking on a link
-            mobileNavLinks.forEach(link => {
-                link.addEventListener('click', () => {
-                    mobileNav.classList.remove('active');
-                    mobileOverlay.classList.remove('active');
-                    document.body.style.overflow = '';
+            function toggleMobileMenu() {
+                if (mobileNav && mobileNav.classList.contains('active')) {
+                    closeMobileMenu();
+                } else {
+                    openMobileMenu();
+                }
+            }
+            
+            // Only set up mobile menu if elements exist
+            if (mobileToggle && mobileNav && mobileOverlay) {
+                mobileToggle.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    toggleMobileMenu();
                 });
-            });
+                
+                mobileOverlay.addEventListener('click', function(e) {
+                    if (e.target === mobileOverlay) {
+                        closeMobileMenu();
+                    }
+                });
+                
+                // Close mobile menu when clicking on a link
+                mobileNavLinks.forEach(link => {
+                    link.addEventListener('click', () => {
+                        closeMobileMenu();
+                    });
+                });
+                
+                // Close menu on window resize to desktop
+                window.addEventListener('resize', () => {
+                    if (window.innerWidth > 768) {
+                        closeMobileMenu();
+                    }
+                });
+            }
             
             // Enhanced header scroll effect with throttling
             let scrollTimer;
